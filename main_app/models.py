@@ -14,3 +14,8 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title} - {self.start_date}"
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_picture_url = models.URLField(null=True)
