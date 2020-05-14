@@ -33,7 +33,16 @@ Here are some of the ways we expect users to interact with Horizon
 
 ## Wire Frames
 
-![Main User Page](/readme-assets/main-page.png)
+![Splash](/readme-assets/horizon_splash.jpg)
+![Login](/readme-assets/horizon_login.jpg)
+![Main](/readme-assets/horizon_main.jpg)
+![Mobile Login](/readme-assets/horizon_mobile_1.jpg)
+![New](/readme-assets/horizon_new.jpg)
+![Edit](/readme-assets/horizon_edit.jpg)
+![Social](/readme-assets/horizon_social.jpg)
+![Mobile Use](/readme-assets/horizon_mobile_2.jpg)
+
+
 
 ## ERD
 
