@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Event, Profile
+from .models import Event, Profile, Profile_to_Event_rel
+from .forms import EventForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -10,10 +11,26 @@ from django.contrib.auth.forms import UserCreationForm
 def home(request):
     return render(request, 'home.html')
 
-@login_required
+@login_required 
 def events_index(request):
     events = Event.objects.all()
     return render(request, 'events/index.html', {'events': events})
+
+@login_required
+def events_new(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            profile = Profile.objects.get(user = request.user)
+            new_rel = Profile_to_Event_rel(profile_id=profile, event_id=event, permission_level=1)
+            new_rel.save()
+            return redirect('index')
+        
+    else:
+        form = EventForm()
+        context = {'form': form}
+        return render(request, 'events/new.html', context)
 
 def signup(request):
     if request.method == 'POST':
