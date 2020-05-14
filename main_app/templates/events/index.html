@@ -1,14 +1,12 @@
-{% block content %}
+{% extends 'base.html'%} {% block content %}
 
 <h1>Events</h1>
 
 {% for event in events %}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ event.name }}</span>
-      <p>Where: {{ event.where }}</p>
-    </div>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ event.name }}</span>
+    <p>Where: {{ event.where }}</p>
   </div>
-{% endfor %}
-
-{% endblock %}
+</div>
+{% endfor %} {% endblock %}
