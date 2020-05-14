@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+PERMISSIONS = (
+    (1, 'Admin'),
+    (2, 'Read/Write'),
+    (3, 'Read')
+)
+
 
 class Event(models.Model):
     title = models.CharField(max_length=255)
@@ -19,3 +25,15 @@ class Event(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_picture_url = models.URLField(null=True)
+
+
+class Profile_to_Event_rel(models.Model):
+
+    class Event_Permissions(models.IntegerChoices):
+        ADMIN = 1
+        READWRITE = 2
+        READ = 3
+
+    profile_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
+    permission_level = models.IntegerField(choices=Event_Permissions.choices)
