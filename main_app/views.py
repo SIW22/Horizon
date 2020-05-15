@@ -13,7 +13,8 @@ def home(request):
 
 @login_required 
 def events_index(request):
-    events = Event.objects.all()
+    profile = Profile.objects.get(user = request.user)
+    events = Event.objects.filter(profile_to_event_rel__profile_id=profile.id)
     return render(request, 'events/index.html', {'events': events})
 
 @login_required
