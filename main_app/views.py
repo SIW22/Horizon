@@ -38,6 +38,20 @@ def events_new(request):
 
 
 @login_required
+def edit_event(request, event_id):
+    event = Event.objects.get(id=event_id)
+    if request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('index')
+    else:
+        form = EventForm(instance=event)
+        context = {"event": event, "form": form}
+    return render(request, 'events/edit.html', context)
+
+
+@login_required
 def remove_event(request, event_id):
     if request.method == 'DELETE':
         event = Event.objects.get(id=event_id)
