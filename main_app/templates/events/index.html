@@ -2,11 +2,28 @@
 
 <h1>Events</h1>
 
-{% for event in events %}
-<div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ event.name }}</span>
-    <p>Where: {{ event.where }}</p>
-  </div>
-</div>
-{% endfor %} {% endblock %}
+{% if events %}
+<ul>
+  {% for event in events %}
+  <li>
+    <div><span>{{event.title}}</span> -- <span>{{event.where}}</span></div>
+    <div>{{event.start_date}} to {{event.end_date}}</div>
+    <div>
+      <button
+        class="edit-event btn btn-sm btn-primary"
+        data_eventId="{{event.id}}"
+      >
+        Edit
+      </button>
+      <button
+        class="delete-event btn btn-sm btn-danger"
+        data_eventId="{{event.id}}"
+      >
+        Delete
+      </button>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %} {% endblock %}

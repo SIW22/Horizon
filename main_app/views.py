@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from .models import Event, Profile, Profile_to_Event_rel
 from .forms import EventForm
 from django.contrib.auth import login
@@ -11,11 +12,13 @@ from django.contrib.auth.forms import UserCreationForm
 def home(request):
     return render(request, 'home.html')
 
-@login_required 
+
+@login_required
 def events_index(request):
-    profile = Profile.objects.get(user = request.user)
+    profile = Profile.objects.get(user=request.user)
     events = Event.objects.filter(profile_to_event_rel__profile_id=profile.id)
     return render(request, 'events/index.html', {'events': events})
+
 
 @login_required
 def events_new(request):
@@ -23,15 +26,26 @@ def events_new(request):
         form = EventForm(request.POST)
         if form.is_valid():
             event = form.save()
-            profile = Profile.objects.get(user = request.user)
-            new_rel = Profile_to_Event_rel(profile_id=profile, event_id=event, permission_level=1)
+            profile = Profile.objects.get(user=request.user)
+            new_rel = Profile_to_Event_rel(
+                profile_id=profile, event_id=event, permission_level=1)
             new_rel.save()
             return redirect('index')
-        
     else:
         form = EventForm()
         context = {'form': form}
         return render(request, 'events/new.html', context)
+
+
+@login_required
+def remove_event(request, event_id):
+    if request.method == 'DELETE':
+        event = Event.objects.get(id=event_id)
+        event.delete()
+        return JsonResponse({"status": 200, "eventId": event_id})
+    else:
+        return JsonResponse({"status": 401, "message": "Whoops - it borked"})
+
 
 def signup(request):
     if request.method == 'POST':
@@ -42,7 +56,7 @@ def signup(request):
             new_profile = Profile(user=user)
             new_profile.save()
             login(request, user)
-            return redirect('login')  
+            return redirect('login')
         else:
             pass
     form = UserCreationForm()
