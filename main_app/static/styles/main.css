@@ -1,17 +1,70 @@
+/* UNIVERSAL */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: futura;
   margin: 0;
   padding: 0;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
 }
 
+
+
+/* HEADER */
+.nav-banner {
+  width: 100vw;
+  height: 105px;
+  background-color: #7FCDEE;
+  display: flex;
+  justify-content: left;
+   align-items: center;
+  z-index: 0;
+}
+
+.logo-glow { 
+  position: absolute;
+  margin-top: 2.5px;
+  margin-left: 85px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity .7s ease-in;
+}
+
+.logo-type {
+  position: absolute;
+  margin-top: 2.5px;
+  margin-left: 120px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+}
+
+.nav-banner-overlay {
+  height: 45px;
+  width: 100vw;
+  background-color: #54BCE8;
+  position: relative;
+  z-index: 30;
+}
+
+/* BODY */
+/* .container {
+  display: flex;
+} */
+
+/* CARDS */
+
+
+/* CALENDAR */
 #date-thing {
   text-align: center;
 }
-
 
 .calendar, .week-banner {
   width: 90vw;
@@ -54,4 +107,20 @@ body {
 
 .we {
   background-color: #54bce8;
+}
+
+.sun {
+  border-radius: 20px 0 0 0;
+}
+
+.sat {
+  border-radius: 0 20px 0 0;
+}
+
+.day-e1 {
+  border-radius: 0 0 0 20px;
+}
+
+.day-e7 {
+  border-radius: 0 0 20px 0;
 }
