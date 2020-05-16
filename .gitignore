@@ -1,7 +1,8 @@
 .env/
 .main_app/__pycache__/
 .project_two/__pycache__/
-
+main_app/__pycache__/
+*/__pycache__/*
 
 # Created by https://www.gitignore.io/api/django
 # Edit at https://www.gitignore.io/?templates=django

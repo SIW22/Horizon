@@ -8,6 +8,8 @@ urlpatterns = [
     path('events/<int:event_id>/edit', views.edit_event, name='edit_event'),
     path('events/<int:event_id>/remove_event',
          views.remove_event, name='remove_event'),
+    path('events/get/<str:start_date>/<str:end_date>',
+         views.get_events, name='get_events'),
     # Auth related paths
     path('accounts/signup', views.signup, name='signup')
 ]
