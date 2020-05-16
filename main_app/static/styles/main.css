@@ -1,13 +1,19 @@
 body {
+  font-family: futura;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #7fcdee;
+  background-color: whitesmoke;
 }
 
-.calendar {
+#date-thing {
+  text-align: center;
+}
+
+
+.calendar, .week-banner {
   width: 90vw;
   height: auto;
   display: flex;
@@ -16,12 +22,36 @@ body {
   flex-wrap: wrap;
 }
 
-.day-block {
+.day-block, .day-marker {
   width: 12vw;
   height: 12.75vw; 
   color: #1A1A1A;
   padding: 0;
   text-align: center;
+  background-color: #7fcdee;
+  border: 1px solid #3f8dae;
+  display: flex;
+}
+
+.day-marker {
+  height: 4vw; 
+  align-items: center;
+}
+
+.day-tag {
+  margin-left: 5px;
+  color: #1A1A1A;
+}
+
+.day-square {
+  /* margin-left: 5px; */
+  color: #1A1A1A;
+  max-height: 1.5em;
+  min-width: 15px;
+  padding: 0px 5px;
+  background-color: rgba(240,240,240,.5);
+}
+
+.we {
   background-color: #54bce8;
-  border: 1px inset #7fcdee;
 }
