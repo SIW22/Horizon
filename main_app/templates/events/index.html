@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% block content %}
 
-<h1>Events</h1>
+<!-- <h1>Events</h1> -->
 
 <!-- {% if events %}
 <ul>
@@ -31,45 +31,124 @@
 <input type="date" id="date-thing">
 
 <div class="calendar">
-  <div data_selectedDate="2020-02-03"class="day-block day-a1">Number</div>
-  <div class="day-block day-a2">Number</div>
-  <div class="day-block day-a3">Number</div>
-  <div class="day-block day-a4">Number</div>
-  <div class="day-block day-a5">Number</div>
-  <div class="day-block day-a6">Number</div>
-  <div class="day-block day-a7">Number</div>
+
+  <div class="day-marker sun we"><span class='day-tag'>S</span></div>
+  <div class="day-marker mon"><span class='day-tag'>M</span></div>
+  <div class="day-marker tue"><span class='day-tag'>T</span></div>
+  <div class="day-marker wed"><span class='day-tag'>W</span></div>
+  <div class="day-marker thu"><span class='day-tag'>T</span></div>
+  <div class="day-marker fri"><span class='day-tag'>F</span></div>
+  <div class="day-marker sat we"><span class='day-tag'>S</span></div>
+ 
+  <div class="day-block day-a1 we">
+    <div class="day-square" data_selectedDate="2020-02-03">Number</div>
+  </div>
+  <div class="day-block day-a2">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-a3">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-a4">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-a5">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-a6">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-a7 we">
+    <div class="day-square">Number</div>
+  </div>
   
-  <div class="day-block day-b1">Number</div>
-  <div class="day-block day-b2">Number</div>
-  <div class="day-block day-b3">Number</div>
-  <div class="day-block day-b4">Number</div>
-  <div class="day-block day-b5">Number</div>
-  <div class="day-block day-b6">Number</div>
-  <div class="day-block day-b7">Number</div>
+  <div class="day-block day-b1 we">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-b2">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-b3">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-b4">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-b5">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-b6">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-b7 we">
+    <div class="day-square">Number</div>
+  </div>
   
-  <div class="day-block day-c1">Number</div>
-  <div class="day-block day-c2">Number</div>
-  <div class="day-block day-c3">Number</div>
-  <div class="day-block day-c4">Number</div>
-  <div class="day-block day-c5">Number</div>
-  <div class="day-block day-c6">Number</div>
-  <div class="day-block day-c7">Number</div>
+  <div class="day-block day-c1 we">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-c2">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-c3">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-c4">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-c5">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-c6">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-c7 we">
+    <div class="day-square">Number</div>
+  </div>
   
-  <div class="day-block day-d1">Number</div>
-  <div class="day-block day-d2">Number</div>
-  <div class="day-block day-d3">Number</div>
-  <div class="day-block day-d4">Number</div>
-  <div class="day-block day-d5">Number</div>
-  <div class="day-block day-d6">Number</div>
-  <div class="day-block day-d7">Number</div>
+  <div class="day-block day-d1 we">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-d2">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-d3">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-d4">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-d5">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-d6">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-d7 we">
+    <div class="day-square">Number</div>
+  </div>
   
-  <div class="day-block day-e1">Number</div>
-  <div class="day-block day-e2">Number</div>
-  <div class="day-block day-e3">Number</div>
-  <div class="day-block day-e4">Number</div>
-  <div class="day-block day-e5">Number</div>
-  <div class="day-block day-e6">Number</div>
-  <div class="day-block day-e7">Number</div>
+  <div class="day-block day-e1 we">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-e2">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-e3">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-e4">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-e5">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-e6">
+    <div class="day-square">Number</div>
+  </div>
+  <div class="day-block day-e7 we">
+    <div class="day-square">Number</div>
+  </div>
 </div>
 
 

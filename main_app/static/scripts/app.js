@@ -58,7 +58,7 @@ function getRecentSunday(referenceDate) {
 }
 
 function renderCalendar() {
-  const dayBlocks = document.querySelectorAll(".day-block");
+  const dayBlocks = document.querySelectorAll(".day-square");
 
   dayBlocks.forEach((dayBlock) => {
     let isFirstDay;
@@ -81,7 +81,7 @@ function renderCalendar() {
 }
 
 function rerenderCalendar() {
-  const firstDay = document.querySelector(".day-block");
+  const firstDay = document.querySelector(".day-square");
   const datePicker = document.querySelector("#date-thing");
   firstDay.setAttribute("data_selectedDate", datePicker.value);
   renderCalendar();
