@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.db.models import Q
+from django.core import serializers
 from .models import Event, Profile, Profile_to_Event_rel
 from .forms import EventForm
 from django.contrib.auth import login
@@ -18,6 +20,15 @@ def events_index(request):
     profile = Profile.objects.get(user=request.user)
     events = Event.objects.filter(profile_to_event_rel__profile_id=profile.id)
     return render(request, 'events/index.html', {'events': events})
+
+
+@login_required
+def get_events(request, start_date, end_date):
+    profile = Profile.objects.get(user=request.user)
+    events = Event.objects.filter(profile_to_event_rel__profile_id=profile.id).filter(
+        Q(start_date__gte=start_date) & Q(end_date__lte=end_date))
+    events_json = serializers.serialize('json', events)
+    return JsonResponse(events_json, safe=False)
 
 
 @login_required
