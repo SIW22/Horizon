@@ -2,7 +2,7 @@
 
 <!-- <h1>Events</h1> -->
 
-<!-- {% if events %}
+{% if events %}
 <ul>
   {% for event in events %}
   <li>
@@ -26,22 +26,21 @@
   {% endfor %}
 </ul>
 
-{% endif %} -->
+{% endif %}
 
-<input type="date" id="date-thing">
+<input type="date" id="date-thing" />
 
 <div class="calendar">
+  <div class="day-marker sun we"><span class="day-tag">S</span></div>
+  <div class="day-marker mon"><span class="day-tag">M</span></div>
+  <div class="day-marker tue"><span class="day-tag">T</span></div>
+  <div class="day-marker wed"><span class="day-tag">W</span></div>
+  <div class="day-marker thu"><span class="day-tag">T</span></div>
+  <div class="day-marker fri"><span class="day-tag">F</span></div>
+  <div class="day-marker sat we"><span class="day-tag">S</span></div>
 
-  <div class="day-marker sun we"><span class='day-tag'>S</span></div>
-  <div class="day-marker mon"><span class='day-tag'>M</span></div>
-  <div class="day-marker tue"><span class='day-tag'>T</span></div>
-  <div class="day-marker wed"><span class='day-tag'>W</span></div>
-  <div class="day-marker thu"><span class='day-tag'>T</span></div>
-  <div class="day-marker fri"><span class='day-tag'>F</span></div>
-  <div class="day-marker sat we"><span class='day-tag'>S</span></div>
- 
   <div class="day-block day-a1 we">
-    <div class="day-square" data_selectedDate="2020-02-03">Number</div>
+    <div class="day-square" data_selectedDate="">Number</div>
   </div>
   <div class="day-block day-a2">
     <div class="day-square">Number</div>
@@ -61,7 +60,7 @@
   <div class="day-block day-a7 we">
     <div class="day-square">Number</div>
   </div>
-  
+
   <div class="day-block day-b1 we">
     <div class="day-square">Number</div>
   </div>
@@ -83,7 +82,7 @@
   <div class="day-block day-b7 we">
     <div class="day-square">Number</div>
   </div>
-  
+
   <div class="day-block day-c1 we">
     <div class="day-square">Number</div>
   </div>
@@ -105,7 +104,7 @@
   <div class="day-block day-c7 we">
     <div class="day-square">Number</div>
   </div>
-  
+
   <div class="day-block day-d1 we">
     <div class="day-square">Number</div>
   </div>
@@ -127,7 +126,7 @@
   <div class="day-block day-d7 we">
     <div class="day-square">Number</div>
   </div>
-  
+
   <div class="day-block day-e1 we">
     <div class="day-square">Number</div>
   </div>
@@ -150,6 +149,5 @@
     <div class="day-square">Number</div>
   </div>
 </div>
-
 
 {% endblock %}
