@@ -1,6 +1,6 @@
 .env/
-.main_app/_pycache_/
-.project_two/_pycache_/
+.main_app/__pycache__/
+.project_two/__pycache__/
 
 
 # Created by https://www.gitignore.io/api/django

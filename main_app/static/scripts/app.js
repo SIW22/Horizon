@@ -38,3 +38,59 @@ function getCookie(name) {
   }
   return cookieValue;
 }
+
+let currentDate;
+
+function renderCurrentDate(dayBlock, isFirstDay) {
+  dayBlock.setAttribute("id", currentDate.toFormat("yyyy-LL-dd"))
+  if (currentDate.c.day === 1) {
+    dayBlock.innerHTML = `${currentDate.monthShort} - ${currentDate.c.day}`;
+  } else {
+    dayBlock.innerHTML = `${isFirstDay ? currentDate.monthShort + " - " : ""}${
+      currentDate.c.day
+    }`;
+  }
+}
+
+function getRecentSunday(referenceDate) {
+  if (referenceDate.weekday === 7) return referenceDate;
+  else return referenceDate.plus({ days: -referenceDate.weekday });
+}
+
+function renderCalendar() {
+  const dayBlocks = document.querySelectorAll(".day-block");
+
+  dayBlocks.forEach((dayBlock) => {
+    let isFirstDay;
+    if (currentDate === undefined) {
+      isFirstDay = true;
+      const currentDateData = dayBlock.getAttribute("data_selectedDate");
+      const dateArray = currentDateData.split("-");
+      const thisDate = luxon.DateTime.local(
+        parseInt(dateArray[0]),
+        parseInt(dateArray[1]),
+        parseInt(dateArray[2])
+      );
+      currentDate = getRecentSunday(thisDate);
+    } else {
+      currentDate = currentDate.plus({ days: 1 });
+    }
+    renderCurrentDate(dayBlock, isFirstDay);
+  });
+  currentDate = undefined;
+}
+
+function rerenderCalendar() {
+  const firstDay = document.querySelector(".day-block");
+  const datePicker = document.querySelector("#date-thing");
+  firstDay.setAttribute("data_selectedDate", datePicker.value);
+  renderCalendar();
+}
+
+const datePicker = document.querySelector("#date-thing");
+datePicker.addEventListener("blur", function () {
+  rerenderCalendar();
+});
+
+//Do it the first time
+renderCalendar();
