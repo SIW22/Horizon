@@ -79,32 +79,16 @@ function setUpCalendar() {
   const firstDate = getRecentSunday(datePicker.value);
   firstDay.setAttribute("data_selectedDate", firstDate.toFormat("yyyy-LL-dd"));
 
-  // Get the events from the fetch API, using firstDate as the reference
-  let csrftoken = getCookie("csrftoken");
-
-  //PYTHON ENDPOINT WE'RE HITTING
-  //   path('events/get/<str:start_date>/<str:end_date>',views.get_events, name='get_events'),
-
-  //NEW IMPORTS
-  //   from django.db.models import Q
-  //   from django.core import serializers
-
-  //NEW GET METHOD
-  // @login_required
-  // def get_events(request, start_date, end_date):
-  //     profile = Profile.objects.get(user=request.user)
-  //     events = Event.objects.filter(profile_to_event_rel__profile_id=profile.id).filter(
-  //         Q(start_date__gte=start_date) & Q(end_date__lte=end_date))
-  //     events_json = serializers.serialize('json', events)
-  //     return JsonResponse(events_json, safe=False)
-
   fetch(
     `/events/get/${firstDate.toFormat("yyyy-LL-dd")}/${firstDate
       .plus({ days: calendarDuration })
       .toFormat("yyyy-LL-dd")}`,
     {
       method: "GET",
-      headers: { Accept: "application/json", "X-CSRFToken": csrftoken },
+      headers: {
+        Accept: "application/json",
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
     }
   )
     .then((response) => response.json())
@@ -112,10 +96,33 @@ function setUpCalendar() {
     .catch((err) => console.log(`Err: ${err}`));
 }
 
-const datePicker = document.querySelector("#date-thing");
-datePicker.addEventListener("blur", function () {
-  setUpCalendar();
+function selectCalendarDate(id) {
+  console.log(document.querySelector(`#${id}`).classList);
+}
+
+//Adds all the necessary event listeners to main
+const main = document.querySelector("main");
+//Main inputs
+main.addEventListener("input", (event) => {
+  //Change the input
+  if (event.target.getAttribute("id") === "date-thing") {
+    setUpCalendar();
+  }
+});
+//Main clicks
+main.addEventListener("click", (event) => {
+  //If you click a day block itself
+  if (event.target.classList.contains("day-block")) {
+    selectCalendarDate(event.target.getAttribute("id"));
+  }
+  // If you click inside a day block
+  if (
+    event.target.classList.contains("calendar-event-content") ||
+    event.target.classList.contains("day-square")
+  ) {
+    selectCalendarDate(event.target.parentElement.getAttribute("id"));
+  }
 });
 
-//Do it the first time
+//Set up the calendar when you first load the page
 setUpCalendar();
