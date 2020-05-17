@@ -9,21 +9,11 @@
         <ul>
           {% for event in events %}
           <li>
-            <div><span>{{event.title}}</span> -- <span>{{event.where}}</span></div>
-            <div>{{event.start_date}} to {{event.end_date}}</div>
+            <div><span class="event-title">{{event.title}}</span> -- <span class="event-where">{{event.where}}</span></div>
+            <div class="event-date">{{event.start_date}} to {{event.end_date}}</div>
             <div>
-              <a
-                class="edit-event btn btn-sm btn-primary"
-                href="/events/{{event.id}}/edit"
-              >
-                Edit
-              </a>
-              <button
-                class="delete-event btn btn-sm btn-danger"
-                data_eventId="{{event.id}}"
-              >
-                Delete
-              </button>
+              <a class="edit-event" href="/events/{{event.id}}/edit">Edit</a>
+              <button class="delete-event" data_eventId="{{event.id}}">Delete</button>
             </div>
           </li>
           {% endfor %}
