@@ -75,6 +75,20 @@ function getRecentSunday(referenceDate) {
   else return thisDate.plus({ days: -thisDate.weekday });
 }
 
+function shiftByWeek(direction) {
+  const datePicker = document.querySelector("#date-thing");
+  const dateArray = datePicker.value.split("-");
+  const thisDate = luxon.DateTime.local(
+    parseInt(dateArray[0]),
+    parseInt(dateArray[1]),
+    parseInt(dateArray[2])
+  );
+  const change = direction === "forward" ? 7 : -7;
+  const returnDate = thisDate.plus({ days: change });
+  datePicker.value = returnDate.toFormat("yyyy-LL-dd");
+  setUpCalendar();
+}
+
 function setUpCalendar() {
   const firstDay = document.querySelector(".day-square");
   const datePicker = document.querySelector("#date-thing");
@@ -103,21 +117,45 @@ function setUpCalendar() {
 
 function renderEventCard(userEvent, cardContainer) {
   const card = document.createElement("div");
-  card.classList.add(["primary-card", "card"]);
+  card.classList.add("primary-card");
+  card.classList.add("card");
 
-  //Render title
+  //Title
   const title = document.createElement("p");
-  title.classList.add(["title", "card-content"]);
+  title.classList.add("event-title");
+  title.classList.add("card-content");
   title.innerHTML = userEvent.getAttribute("data-title");
   card.appendChild(title);
 
-  //Need to render where, and edit / delete
+  //Where
+  const where = document.createElement("p");
+  where.classList.add("event-where");
+  where.classList.add("card-content");
+  where.innerHTML = userEvent.getAttribute("data-where");
+  card.appendChild(where);
 
+  //Edit
+  const editLink = document.createElement("a");
+  editLink.classList.add("edit-event");
+  editLink.setAttribute(
+    "href",
+    `/events/${userEvent.getAttribute("data-pk")}/edit`
+  );
+  editLink.innerHTML = "Edit";
+  card.appendChild(editLink);
+
+  //Delete
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-event");
+  deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
+  deleteButton.innerHTML = "Delete";
+  card.appendChild(deleteButton);
+
+  //Add the card to the card container
   cardContainer.appendChild(card);
 }
 
 function selectCalendarDate(id) {
-  console.log(id);
   //Get our selected date block
   const userEvents = document
     .querySelector(`#${id}`)
@@ -159,6 +197,14 @@ main.addEventListener("click", (event) => {
     event.target.classList.contains("day-square")
   ) {
     selectCalendarDate(event.target.parentElement.getAttribute("id"));
+  }
+
+  //If you click the up or down arrow
+  if (event.target.classList.contains("arrow")) {
+    const direction = event.target.classList.contains("up-one-week")
+      ? "reverse"
+      : "forward";
+    shiftByWeek(direction);
   }
 });
 
