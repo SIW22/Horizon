@@ -47,7 +47,12 @@ function renderEvents(eventsJson) {
     );
     const content = document.createElement("p");
     content.classList.add("calendar-event-content");
+    content.setAttribute("id", `event-id-${event.pk}`);
     content.innerHTML = `${event.fields.title} - ${event.fields.where}`;
+    content.setAttribute("data-pk", event.pk);
+    content.setAttribute("data-title", event.fields.title);
+    content.setAttribute("data-where", event.fields.where);
+    content.setAttribute("data-startDate", event.fields.start_date);
     dateBlock.appendChild(content);
   });
 }
@@ -96,8 +101,41 @@ function setUpCalendar() {
     .catch((err) => console.log(`Err: ${err}`));
 }
 
+function renderEventCard(userEvent, cardContainer) {
+  const card = document.createElement("div");
+  card.classList.add(["primary-card", "card"]);
+
+  //Render title
+  const title = document.createElement("p");
+  title.classList.add(["title", "card-content"]);
+  title.innerHTML = userEvent.getAttribute("data-title");
+  card.appendChild(title);
+
+  //Need to render where, and edit / delete
+
+  cardContainer.appendChild(card);
+}
+
 function selectCalendarDate(id) {
-  console.log(document.querySelector(`#${id}`).classList);
+  console.log(id);
+  //Get our selected date block
+  const userEvents = document
+    .querySelector(`#${id}`)
+    .querySelectorAll(".calendar-event-content");
+
+  const cardContainer = document.querySelector(".cards");
+  cardContainer.innerHTML = "";
+  userEvents.forEach((userEvent) => {
+    renderEventCard(userEvent, cardContainer);
+  });
+
+  //Render add event button
+  const newEventButton = document.createElement("a");
+  newEventButton.style.display = "block";
+  newEventButton.setAttribute("href", `/events/new`); //Add the date string at the end of this for optional parameter
+  newEventButton.setAttribute("data-selectedDate", `${id}`);
+  newEventButton.innerHTML = "Create New Event";
+  cardContainer.appendChild(newEventButton);
 }
 
 //Adds all the necessary event listeners to main
