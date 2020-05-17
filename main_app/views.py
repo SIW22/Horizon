@@ -3,6 +3,8 @@ from django.http import JsonResponse, HttpResponse
 from django.db.models import Q
 from django.core import serializers
 from .models import Event, Profile, Profile_to_Event_rel, ContactForm
+from .models import Event, Profile, Profile_to_Event_rel
+from django.contrib.auth.models import User
 from .forms import EventForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
@@ -14,6 +16,8 @@ from django.core.mail import send_mail
 
 def home(request):
     return render(request, 'home.html')
+
+# EVENT VIEWS
 
 
 @login_required
@@ -73,6 +77,21 @@ def remove_event(request, event_id):
         return JsonResponse({"status": 401, "message": "Whoops - it borked"})
 
 
+# FRIEND REALTED VIEWS
+@login_required
+def friends_index(request):
+    profile = Profile.objects.get(user=request.user)
+    print(profile.id)
+    friends = []
+    for user in profile.friends.all():
+        friends.append(User.objects.get(id=user.id))
+    context = {'profile': profile, 'friends': friends}
+    return render(request, 'profile/index.html', context=context)
+
+
+# AUTH RELATED VIEWS
+
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -88,6 +107,7 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form}
     return render(request, 'registration/signup.html', context)
+
 
 def contact(request):
     if request.method == 'POST':
