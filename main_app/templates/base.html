@@ -25,6 +25,7 @@
   
     <header>
       <div class="nav-banner">
+
         <div class="logo-carrier">
     
           <div class="logo">
@@ -35,10 +36,16 @@
             <img class='logo-type' src="{% static 'images/horizon_type.png' %}"></img>
           </div>
 
+          <div class="countdown" data_targetDate="2020-06-01" id="time-1"> Next Good Thing: 
+            <div class="result"></div>
+          </div>
+
         </div>
+
+        <div class="nav-banner-overlay"></div>
+
       </div>
       
-      <div class="nav-banner-overlay"></div>
     </header>
 
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -69,3 +76,41 @@
     </main>
   </body>
 </html>
+
+<script>
+  // import {DateTime} from "luxon"
+
+function renderDurationString(timeDifference) {
+  let adjustedDays = Math.floor(luxon.Duration.fromObject(timeDifference).shiftTo('days').get('days'));
+  const adjustedDifference = luxon.Duration.fromObject({days: adjustedDays, hours: timeDifference.hours, minutes: timeDifference.minutes}).toFormat("dd-hh-mm");
+  const splitValues = adjustedDifference.split("-");
+  return `${splitValues[0]}:${splitValues[1]}:${splitValues[2]}`;
+}
+
+function updateCountdowns(countdownObjects) {
+  countdownObjects.forEach((targetObject) => {
+    const targetDate = targetObject.getAttribute("data_targetDate");
+    const targetDateArray = targetDate.split("-");
+
+    const targetTime = luxon.DateTime.local(
+      parseInt(targetDateArray[0]),
+      parseInt(targetDateArray[1]),
+      parseInt(targetDateArray[2])
+    );
+
+    const timeDifference = targetTime
+      .diffNow(["years", "months", "days", "hours", "minutes", "seconds"])
+      .toObject();
+
+    targetObject.querySelector(".result").innerHTML = renderDurationString(
+      timeDifference
+    );
+  });
+}
+
+const timerObjects = document.querySelectorAll(".countdown");
+
+setInterval(function () {
+  updateCountdowns(timerObjects);
+}, 100);
+</script>

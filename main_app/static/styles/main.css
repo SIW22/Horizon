@@ -1,4 +1,6 @@
 /* UNIVERSAL */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -8,28 +10,37 @@ body {
   font-family: futura;
   margin: 0;
   padding: 0;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
 }
 
 
-
 /* HEADER */
+
+
+header {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-banner {
-  width: 100vw;
-  height: 105px;
+  width: 100%;
+  height: 75px;
+  align-self: flex-start;
   background-color: #7FCDEE;
   display: flex;
   justify-content: left;
-   align-items: center;
+  align-items: center;
   z-index: 0;
 }
 
 .logo-glow { 
   position: absolute;
-  margin-top: 2.5px;
+  margin-top: -13px;
   margin-left: 85px;
   z-index: 10;
   /* opacity: 0; */
@@ -38,7 +49,7 @@ body {
 
 .logo-type {
   position: absolute;
-  margin-top: 2.5px;
+  margin-top: -13px;
   margin-left: 120px;
   z-index: 10;
   /* opacity: 0; */
@@ -46,12 +57,42 @@ body {
 }
 
 .nav-banner-overlay {
-  height: 45px;
+  height: 25px;
   width: 100vw;
   background-color: #54BCE8;
+  align-self: flex-end;
   position: relative;
+  margin-bottom: -25;
   z-index: 30;
 }
+
+.countdown {
+  width: 15vw;
+  left: 50%;
+  top: 50%;
+  background-color: #29ABE2;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+  align-self: center;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  z-index: 90;
+  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+}
+
+.result {
+  margin-top: 5px;
+  font-size: 35px;
+}
+
+
+/* SITE FIELD */
+
 
 .field {
   display: flex;
@@ -60,20 +101,48 @@ body {
   align-items: flex-start;
 }
 
+@media only screen and (min-width: 500px) {
+  .field {
+    flex-direction: row;
+  }
+
+  .cards {
+    width: 90vw;
+    height: auto;
+  }
+
+  .calendar, .week-banner {
+    width: 90vw;
+    height: auto;
+  }
+}
 
 
 /* CARDS */
+
+
 .cards {
   margin: 1vw;
-  height: 35vw;
-  width: 45vw;
+  height: 35.25vw;
+  width: 46vw;
+  transition: .3s linear;
+  overflow: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px #3f8dae;
+
 }
 
 .card {
   border-radius: 20px;
   background-color: #7fcdee;
-  border: 1px solid #3f8dae;
-  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+  box-shadow: 0 0 0 1px #3f8dae;
+  /* outline: 1px solid #3f8dae; */
+  transform: translateY();
+}
+
+.card-header {
+  height: 6.375vw;
+
 }
 
 .card-content {
@@ -81,22 +150,20 @@ body {
 }
 
 .primary-card {
-  height: 70%;
+  height: 50%;
   width: 100%;
 }
 
-.secondary-card {
-  height: 11.5%;
-  width: 100%;
-}
 
 /* CALENDAR */
+
+
 #date-thing {
   text-align: center;
 }
 
 .calendar, .week-banner {
-  width: 45vw;
+  width: 45.5vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -105,18 +172,20 @@ body {
 }
 
 .day-block, .day-marker {
-  width: 6vw;
+  width: 6.5vw;
   height: 6.375vw; 
   color: #1A1A1A;
   padding: 0;
   text-align: center;
   background-color: #7fcdee;
-  border: 1px solid #3f8dae;
+  /* outline: 1px solid #3f8dae; */
+  box-shadow: 0 0 0 1px #3f8dae;
   display: flex;
 }
 
 .day-marker {
-  height: 4vw; 
+  height: 30px;
+  margin-top: 17px; 
   align-items: center;
 }
 
@@ -147,10 +216,11 @@ body {
 }
 
 .calendar-nav-bar {
-  height: 4vw; 
-  width: 45vw;
+  height: 30px; 
+  width: 45.5vw;
   background-color: #7fcdee;
-  border: 1px solid #3f8dae;
+  /* outline: 1px solid #3f8dae; */
+  box-shadow: 0 0 0 1px #3f8dae;
   border-radius: 0 0 20px 20px;
   display: flex;
   justify-content: center;
@@ -159,4 +229,20 @@ body {
 
 .date-input {
   border-radius: 5px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 0 10px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.up-one-week {
+  border-bottom: 10px solid whitesmoke;
+}
+
+.down-one-week {
+  border-top: 10px solid whitesmoke;
 }
