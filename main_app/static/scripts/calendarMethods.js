@@ -75,6 +75,20 @@ function getRecentSunday(referenceDate) {
   else return thisDate.plus({ days: -thisDate.weekday });
 }
 
+function shiftByWeek(direction) {
+  const datePicker = document.querySelector("#date-thing");
+  const dateArray = datePicker.value.split("-");
+  const thisDate = luxon.DateTime.local(
+    parseInt(dateArray[0]),
+    parseInt(dateArray[1]),
+    parseInt(dateArray[2])
+  );
+  const change = direction === "forward" ? 7 : -7;
+  const returnDate = thisDate.plus({ days: change });
+  datePicker.value = returnDate.toFormat("yyyy-LL-dd");
+  setUpCalendar();
+}
+
 function setUpCalendar() {
   const firstDay = document.querySelector(".day-square");
   const datePicker = document.querySelector("#date-thing");
@@ -183,6 +197,14 @@ main.addEventListener("click", (event) => {
     event.target.classList.contains("day-square")
   ) {
     selectCalendarDate(event.target.parentElement.getAttribute("id"));
+  }
+
+  //If you click the up or down arrow
+  if (event.target.classList.contains("arrow")) {
+    const direction = event.target.classList.contains("up-one-week")
+      ? "reverse"
+      : "forward";
+    shiftByWeek(direction);
   }
 });
 
