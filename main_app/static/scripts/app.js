@@ -1,8 +1,4 @@
-import { getCookie, confirmImport } from "./shared.js";
-
-console.log("I'm still alive, though very badly burned");
-
-confirmImport();
+import { getCookie } from "./shared.js";
 
 const mainEl = document.querySelector("main");
 mainEl.addEventListener("click", (event) => {
