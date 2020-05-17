@@ -6,7 +6,7 @@ mainEl.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete-event")) {
     const button = event.target;
     let csrftoken = getCookie("csrftoken");
-    fetch(`/events/${button.getAttribute("data_eventid")}/remove_event`, {
+    fetch(`/events/${button.getAttribute("data-eventid")}/remove_event`, {
       method: "DELETE",
       headers: { "X-CSRFToken": csrftoken },
     })
