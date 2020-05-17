@@ -17,7 +17,7 @@ class Event(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    friends = models.ManyToManyField(User, related_name='+', blank=True)
+    friends = models.ManyToManyField("self")
     profile_picture_url = models.URLField(null=True)
 
 
@@ -31,6 +31,7 @@ class Profile_to_Event_rel(models.Model):
     profile_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
     permission_level = models.IntegerField(choices=Event_Permissions.choices)
+
 
 class ContactForm(models.Model):
     name = models.CharField(max_length=100)
