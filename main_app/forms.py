@@ -6,3 +6,9 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = ('title', 'where', 'start_date', 'end_date')
 
+class EmailForm(forms.ModelForm):
+    Email = forms.EmailField()
+    
+    def __str__(self):
+        return self.Email
+

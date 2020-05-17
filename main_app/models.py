@@ -37,3 +37,14 @@ class Profile_to_Event_rel(models.Model):
     profile_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
     permission_level = models.IntegerField(choices=Event_Permissions.choices)
+
+class ContactForm(models.Model):
+    name = models.CharField(max_length=100)
+    message = models.TextField()
+    sender = models.EmailField()
+    phone = models.CharField(max_length=10)
+    cc_myself = models.BooleanField(blank=True)
+    time = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    def __str__(self):
+        return 'Message for {}'.format(self.sender)
