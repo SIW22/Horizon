@@ -32,7 +32,7 @@ body {
   margin-top: 2.5px;
   margin-left: 85px;
   z-index: 10;
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity .7s ease-in;
 }
 
@@ -41,7 +41,7 @@ body {
   margin-top: 2.5px;
   margin-left: 120px;
   z-index: 10;
-  opacity: 0;
+  /* opacity: 0; */
   transition: opacity 1.5s ease-in;
 }
 
@@ -53,13 +53,42 @@ body {
   z-index: 30;
 }
 
-/* BODY */
-/* .container {
+.field {
   display: flex;
-} */
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
 
 /* CARDS */
+.cards {
+  margin: 1vw;
+  height: 35vw;
+  width: 45vw;
+}
 
+.card {
+  border-radius: 20px;
+  background-color: #7fcdee;
+  border: 1px solid #3f8dae;
+  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.primary-card {
+  height: 70%;
+  width: 100%;
+}
+
+.secondary-card {
+  height: 11.5%;
+  width: 100%;
+}
 
 /* CALENDAR */
 #date-thing {
@@ -67,7 +96,7 @@ body {
 }
 
 .calendar, .week-banner {
-  width: 90vw;
+  width: 45vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -76,8 +105,8 @@ body {
 }
 
 .day-block, .day-marker {
-  width: 12vw;
-  height: 12.75vw; 
+  width: 6vw;
+  height: 6.375vw; 
   color: #1A1A1A;
   padding: 0;
   text-align: center;
@@ -117,10 +146,17 @@ body {
   border-radius: 0 20px 0 0;
 }
 
-.day-e1 {
-  border-radius: 0 0 0 20px;
+.calendar-nav-bar {
+  height: 4vw; 
+  width: 45vw;
+  background-color: #7fcdee;
+  border: 1px solid #3f8dae;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.day-e7 {
-  border-radius: 0 0 20px 0;
+.date-input {
+  border-radius: 5px;
 }

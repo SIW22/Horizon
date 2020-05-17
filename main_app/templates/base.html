@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.24.1/luxon.min.js"></script>
+
     <script defer src="{% static 'scripts/app.js' %}" type="module"></script>
 
     <script
@@ -27,11 +28,11 @@
         <div class="logo-carrier">
     
           <div class="logo">
-            <img class='logo-glow' src="/static/images/horizon_glow.png"></img>
+            <img class='logo-glow' src="{% static 'images/horizon_glow.png' %}"/>
           </div>
     
           <div class="logo">
-            <img class='logo-type' src="/static/images/horizon_type.png"></img>
+            <img class='logo-type' src="{% static 'images/horizon_type.png' %}"></img>
           </div>
 
         </div>
