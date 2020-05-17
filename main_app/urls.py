@@ -11,5 +11,5 @@ urlpatterns = [
     path('events/get/<str:start_date>/<str:end_date>',
          views.get_events, name='get_events'),
     # Auth related paths
-    path('accounts/signup', views.signup, name='signup')
+    path('accounts/signup', views.signup, name='signup'),
 ]
