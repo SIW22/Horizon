@@ -101,10 +101,21 @@ header {
   align-items: flex-start;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
   .field {
     flex-direction: row;
   }
+
+  .cards {
+    width: 90vw;
+    height: auto;
+  }
+
+  .calendar, .week-banner {
+    width: 90vw;
+    height: auto;
+  }
+}
 
 
 /* CARDS */
@@ -112,15 +123,26 @@ header {
 
 .cards {
   margin: 1vw;
-  height: 35vw;
-  width: 45vw;
+  height: 35.25vw;
+  width: 46vw;
+  transition: .3s linear;
+  overflow: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px #3f8dae;
+
 }
 
 .card {
   border-radius: 20px;
   background-color: #7fcdee;
-  border: 1px solid #3f8dae;
-  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+  box-shadow: 0 0 0 1px #3f8dae;
+  /* outline: 1px solid #3f8dae; */
+  transform: translateY();
+}
+
+.card-header {
+  height: 6.375vw;
+
 }
 
 .card-content {
@@ -128,12 +150,7 @@ header {
 }
 
 .primary-card {
-  height: 70%;
-  width: 100%;
-}
-
-.secondary-card {
-  height: 11.5%;
+  height: 50%;
   width: 100%;
 }
 
@@ -146,7 +163,7 @@ header {
 }
 
 .calendar, .week-banner {
-  width: 45vw;
+  width: 45.5vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -155,13 +172,14 @@ header {
 }
 
 .day-block, .day-marker {
-  width: 6.3vw;
+  width: 6.5vw;
   height: 6.375vw; 
   color: #1A1A1A;
   padding: 0;
   text-align: center;
   background-color: #7fcdee;
-  border: 1px solid #3f8dae;
+  /* outline: 1px solid #3f8dae; */
+  box-shadow: 0 0 0 1px #3f8dae;
   display: flex;
 }
 
@@ -199,9 +217,10 @@ header {
 
 .calendar-nav-bar {
   height: 30px; 
-  width: 45vw;
+  width: 45.5vw;
   background-color: #7fcdee;
-  border: 1px solid #3f8dae;
+  /* outline: 1px solid #3f8dae; */
+  box-shadow: 0 0 0 1px #3f8dae;
   border-radius: 0 0 20px 20px;
   display: flex;
   justify-content: center;
@@ -210,4 +229,20 @@ header {
 
 .date-input {
   border-radius: 5px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 0 10px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.up-one-week {
+  border-bottom: 10px solid whitesmoke;
+}
+
+.down-one-week {
+  border-top: 10px solid whitesmoke;
 }
