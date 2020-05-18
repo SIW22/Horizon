@@ -247,24 +247,38 @@ body {
 }
 
 
-
-
-@media only screen and (max-width: 600px) {
-  .field {
-    flex-direction: column;
-  }
-}
+/* FOR SCREENS 600 PIXELS AND WIDER */
 
 @media only screen and (min-width: 600px) {
   .field {
     flex-direction: column;
   }
 }
+@media only screen and (min-width: 600px) {
+  .nav-banner {
+    width: 100%;
+    height: 75px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .nav-banner-overlay {
+    height: 25px;
+    width: 100vw;
+  }
+}
+
+
+/* FOR SCREENS 768 PIXELS AND WIDER */
+
 @media only screen and (min-width: 768px) {
   .field {
     flex-direction: column;
   }
 }
+
+
+/* FOR SCREENS 992 PIXELS AND WIDER */
+
 @media only screen and (min-width: 992px) {
   .field {
     flex-direction: row;
@@ -273,6 +287,10 @@ body {
     transform: translateY(-100%);
   }
 }
+
+
+/* FOR SCREENS 1200 PIXELS AND WIDER */
+
 @media only screen and (min-width: 1200px) {
   .field {
     flex-direction: row;
