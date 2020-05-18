@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/1.24.1/luxon.min.js"></script>
-
+    <!-- <link rel="icon" href="{% static 'images/favicon.ico'%}" type="image/x-icon"> -->
     <script defer src="{% static 'scripts/app.js' %}" type="module"></script>
   </head>
   
@@ -36,10 +36,13 @@
 
 
           <nav class="nav-buttons">
+            {% if user.is_authenticated %}
             <a class="nav-link" id="events" href="/events">events</a>
             <a class="nav-link" id="new-event" href="/events/new">+event</a>
-            <a class="nav-link" id="login" href="/accounts/login">login</a>
             <a class="nav-link" id="logout" href="/accounts/logout">logout</a>
+            {% else %}
+            <a class="nav-link" id="login" href="/accounts/login">login</a>
+            {% endif%}
           </nav>  
 
         </div>
@@ -55,31 +58,6 @@
       </div>
       
     </header>
-
-
-    <!-- <nav class="navbar">
-      <a class="navbar-brand" href="/">Horizon</a>
-      <button>
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/events">Events</a>
-          </li>
-          <li class="nav-item">
-            <a href="/events/new" class="nav-link">New Event</a>
-          </li>
-          <li class="nav-item">
-            <a href="/accounts/login" class="nav-link">Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="/accounts/logout" class="nav-link">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
-
 
     <main class="container">
       {% block content %} 

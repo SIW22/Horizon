@@ -118,8 +118,7 @@ function setUpCalendar() {
 
 function renderEventCard(userEvent, cardContainer) {
   const card = document.createElement("div");
-  card.classList.add("primary-card");
-  card.classList.add("card");
+  card.classList.add("primary-card", "card");
   card.setAttribute("target-event-id", `${userEvent.id}`);
 
   const timer = document.createElement("div");
@@ -136,33 +135,56 @@ function renderEventCard(userEvent, cardContainer) {
 
   //Title
   const title = document.createElement("p");
-  title.classList.add("event-title");
-  title.classList.add("card-content");
+  title.classList.add("event-title", "card-content");
   title.innerHTML = userEvent.getAttribute("data-title");
   card.appendChild(title);
 
   //Where
   const where = document.createElement("p");
-  where.classList.add("event-where");
-  where.classList.add("card-content");
+  where.classList.add("event-where", "card-content");
   where.innerHTML = userEvent.getAttribute("data-where");
   card.appendChild(where);
 
   //Edit
   const editLink = document.createElement("a");
-  editLink.classList.add("edit-event");
+  editLink.classList.add("edit-event", "event-button");
   editLink.setAttribute(
     "href",
     `/events/${userEvent.getAttribute("data-pk")}/edit`
   );
+
+  //Pull this style into main.css
+  editLink.style.display = "inline-block";
+  editLink.style.backgroundColor = "#29ABE2";
+  editLink.style.color = "#ffffff";
+  editLink.style.textDecoration = "none";
+  editLink.style.paddingLeft = "10px";
+  editLink.style.paddingRight = "10px";
+  editLink.style.borderRadius = "10px";
+
   editLink.innerHTML = "Edit";
   card.appendChild(editLink);
 
   //Delete
   const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete-event");
+  deleteButton.classList.add("delete-event", "event-button");
   deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
-  deleteButton.innerHTML = "Delete";
+
+  //Pull Style into main.css
+  deleteButton.style.display = "inline-block";
+  deleteButton.style.backgroundColor = "#A07278";
+  deleteButton.style.color = "#ffffff";
+  deleteButton.style.fontSize = "100%";
+  deleteButton.style.fontFamily = "inherit";
+  deleteButton.style.textDecoration = "none";
+  deleteButton.style.padding = "none";
+  deleteButton.style.border = "none";
+  deleteButton.style.paddingLeft = "10px";
+  deleteButton.style.paddingRight = "10px";
+  deleteButton.style.borderRadius = "10px";
+  deleteButton.style.cursor = "pointer";
+
+  deleteButton.innerHTML = "X";
   card.appendChild(deleteButton);
 
   //Add the card to the card container

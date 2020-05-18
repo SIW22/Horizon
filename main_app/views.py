@@ -15,7 +15,10 @@ from django.core.mail import send_mail
 
 
 def home(request):
-    return render(request, 'home.html')
+    if(request.user):
+        return redirect('index')
+    else:
+        return redirect('login')
 
 # EVENT VIEWS
 
