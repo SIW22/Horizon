@@ -17,7 +17,7 @@ class Event(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    friends = models.ManyToManyField("self")
+    friends = models.ManyToManyField("self", blank=True)
     profile_picture_url = models.URLField(null=True)
 
 
