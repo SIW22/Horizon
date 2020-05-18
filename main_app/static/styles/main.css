@@ -19,32 +19,31 @@ body {
 
 .nav-banner {
   width: 100%;
-  height: 30px;
+  height: 39px;
   background-color: #7FCDEE;
-  display: flex;
-  justify-content: left;
-  align-items: center;
   z-index: 0;
 }
 
 .logo-glow { 
+  float: left;
   position: absolute;
-  margin-top: 12px;
-  margin-left: 10px;
+  margin-top: 17px;
+  margin-left: 5px;
   z-index: 10;
-  width: 110px;
+  width: 120px;
 }
 
 .logo-type {
+  float: left;
   position: absolute;
-  margin-top: 12px;
+  margin-top: 16.5px;
   margin-left: 15px;
   z-index: 10;
   width: 100px;
 }
 
 .nav-banner-overlay {
-  height: 10px;
+  height: 13px;
   width: 100vw;
   background-color: #54BCE8;
   position: relative;
@@ -52,17 +51,16 @@ body {
 }
 
 .hamburger-nav {
-  display: absolute;
-  /* justify-content: right;
-  align-items: right; */
+  float: right;
 }
 
 .hamburger {
   height: 25px;
-  margin: 10px;
+  margin: 18px 15px;
 }
 
 .nav-buttons {
+  float: right;
   display: flex;
   align-items: right;
   display: none;
@@ -84,8 +82,7 @@ body {
 
 .main-countdown {
   width: 90vw;
-  left: 50%;
-  top: 50%;
+  max-width: 375px;
   background-color: #29ABE2;
   color: white;
   font-size: 20px;
@@ -93,6 +90,7 @@ body {
   align-self: center;
   padding: 5px;
   border-radius: 10px;
+  border: 0 0 0 1px #3f8dae;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,25 +99,10 @@ body {
   box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
 }
 
-/* .main-countdown {
-  width: 15vw;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-100px);
-  background-color: #29ABE2;
-  color: white;
-  font-size: 20px;
-  margin-top: 5px;
-  align-self: center;
-  padding: 5px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 90;
-  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
-} */
+.event-countdown {
+  width: 45vw;
+  max-width: 150px;
+}
 
 .result {
   margin-top: 5px;
@@ -134,7 +117,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 
@@ -142,17 +125,18 @@ body {
 
 
 .cards {
-  margin: 1vw;
+  margin: 5vw;
   height: 35.25vw;
-  width: 46vw;
+  width: 91vw;
   transition: .3s linear;
   overflow: auto;
-  border-radius: 20px;
+  border-radius: 10px;
+  background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
 }
 
 .card {
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   transform: translateY();
@@ -160,7 +144,6 @@ body {
 
 .card-header {
   height: 6.375vw;
-
 }
 
 .card-content {
@@ -181,7 +164,7 @@ body {
 }
 
 .calendar, .week-banner {
-  width: 45.5vw;
+  width: 91vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -190,33 +173,32 @@ body {
 }
 
 .day-block, .day-marker {
-  width: 6.5vw;
-  height: 6.375vw; 
+  width: 13vw;
+  height: 12vw; 
   color: #1A1A1A;
   padding: 0;
   text-align: center;
   background-color: #7fcdee;
-  /* outline: 1px solid #3f8dae; */
   box-shadow: 0 0 0 1px #3f8dae;
   display: flex;
 }
 
 .day-marker {
   height: 30px;
-  margin-top: 17px; 
   align-items: center;
 }
 
 .day-tag {
   margin-left: 5px;
   color: #1A1A1A;
+  font-size: 10pt;
 }
 
 .day-square {
-  /* margin-left: 5px; */
   color: #1A1A1A;
+  font-size: 7pt;
   max-height: 1.5em;
-  min-width: 15px;
+  min-width: 9px;
   padding: 0px 5px;
   background-color: rgba(240,240,240,.5);
 }
@@ -226,20 +208,19 @@ body {
 }
 
 .sun {
-  border-radius: 20px 0 0 0;
+  border-radius: 10px 0 0 0;
 }
 
 .sat {
-  border-radius: 0 20px 0 0;
+  border-radius: 0 10px 0 0;
 }
 
 .calendar-nav-bar {
   height: 30px; 
-  width: 45.5vw;
+  width: 91vw;
   background-color: #7fcdee;
-  /* outline: 1px solid #3f8dae; */
   box-shadow: 0 0 0 1px #3f8dae;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 10px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,9 +246,42 @@ body {
   border-top: 10px solid whitesmoke;
 }
 
-/* 
-@media (min-width: 1000px), screen {
-  
+
+
+
+@media only screen and (max-width: 600px) {
+  .field {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .field {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .field {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .field {
+    flex-direction: row;
+  }
+  .countdown {
+    transform: translateY(-100%);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .field {
+    flex-direction: row;
+  }
+  .countdown {
+    transform: translateY(-100%);
+  }
+}
+  /* 
   .countdown {
     transform: translateY(0px);
   }
@@ -296,4 +310,68 @@ body {
     height: 25px;
     width: 100vw;
   }
+} 
+
+.calendar, .week-banner {
+  width: 45.5vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.day-block, .day-marker {
+  width: 6.5vw;
+  height: 6.375vw; 
+  color: #1A1A1A;
+  padding: 0;
+  text-align: center;
+  background-color: #7fcdee;
+  outline: 1px solid #3f8dae; 
+  box-shadow: 0 0 0 1px #3f8dae;
+  display: flex;
+}
+
+.day-marker {
+  height: 30px;
+  margin-top: 17px; 
+  align-items: center;
+}
+
+.day-tag {
+  margin-left: 5px;
+  color: #1A1A1A;
+}
+
+.day-square {
+  margin-left: 5px;
+  color: #1A1A1A;
+  max-height: 1.5em;
+  min-width: 15px;
+  padding: 0px 5px;
+  background-color: rgba(240,240,240,.5);
+}
+
+
+*/ 
+
+/* .main-countdown {
+  width: 15vw;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-100px);
+  background-color: #29ABE2;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+  align-self: center;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
 } */
