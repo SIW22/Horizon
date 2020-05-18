@@ -1,9 +1,9 @@
-{% extends 'base.html'%} {% block content %}
+{% extends 'base.html'%} {% load static %} {% block content %}
 
 <section class="field">
-<!-- <h1>Events</h1> -->
+  <!-- <h1>Events</h1> -->
   <div class="cards">
-    <div class="primary-card card">
+    <!-- <div class="primary-card card">
       <div class="event-loop event">
         {% if events %}
         <ul>
@@ -23,8 +23,7 @@
     </div>
 
     <div class="primary-card card"></div>
-    <div class="primary-card card"></div>
-
+    <div class="primary-card card"></div> -->
   </div>
 
   <div class="calendar">
@@ -35,7 +34,7 @@
     <div class="day-marker thu"><span class="day-tag">T</span></div>
     <div class="day-marker fri"><span class="day-tag">F</span></div>
     <div class="day-marker sat we"><span class="day-tag">S</span></div>
-    
+
     <div class="day-block day-a1 we">
       <div class="day-square" data_selectedDate="">Number</div>
     </div>
@@ -57,7 +56,7 @@
     <div class="day-block day-a7 we">
       <div class="day-square">Number</div>
     </div>
-    
+
     <div class="day-block day-b1 we">
       <div class="day-square">Number</div>
     </div>
@@ -79,7 +78,7 @@
     <div class="day-block day-b7 we">
       <div class="day-square">Number</div>
     </div>
-    
+
     <div class="day-block day-c1 we">
       <div class="day-square">Number</div>
     </div>
@@ -101,7 +100,7 @@
     <div class="day-block day-c7 we">
       <div class="day-square">Number</div>
     </div>
-    
+
     <div class="day-block day-d1 we">
       <div class="day-square">Number</div>
     </div>
@@ -123,7 +122,7 @@
     <div class="day-block day-d7 we">
       <div class="day-square">Number</div>
     </div>
-    
+
     <div class="day-block day-e1 we">
       <div class="day-square">Number</div>
     </div>
@@ -151,9 +150,9 @@
       <input class="date-input" type="date" id="date-thing" />
       <div class="down-one-week arrow"></div>
     </div>
-
   </div>
-
 </section>
 
+<script src="{% static 'scripts/timerMethods.js' %}" type="module"></script>
+<script src="{% static 'scripts/calendarMethods.js' %}" type="module"></script>
 {% endblock %}
