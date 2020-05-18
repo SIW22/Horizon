@@ -71,7 +71,7 @@ body {
   align-items: center;
 }
 
-.countdown {
+.main-countdown {
   width: 15vw;
   left: 50%;
   top: 50%;
@@ -108,22 +108,6 @@ body {
   align-items: flex-start;
 }
 
-@media only screen and (min-width: 500px) {
-  .field {
-    flex-direction: row;
-  }
-
-  .cards {
-    width: 90vw;
-    height: auto;
-  }
-
-  .calendar, .week-banner {
-    width: 90vw;
-    height: auto;
-  }
-}
-
 
 /* CARDS */
 
@@ -136,7 +120,6 @@ body {
   overflow: auto;
   border-radius: 20px;
   box-shadow: 0 0 0 1px #3f8dae;
-
 }
 
 .card {
@@ -251,4 +234,27 @@ body {
 
 .down-one-week {
   border-top: 10px solid whitesmoke;
+}
+
+
+@media (min-width: 1000px), screen {
+  
+  .countdown {
+    transform: translateY(0px);
+  }
+
+  .field {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .cards {
+    width: 90vw;
+    height: auto;
+  }
+
+  .calendar, .week-banner {
+    width: 90vw;
+    height: auto;
+  }
 }
