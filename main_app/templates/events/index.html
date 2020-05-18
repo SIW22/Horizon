@@ -1,4 +1,4 @@
-{% extends 'base.html'%} {% block content %}
+{% extends 'base.html'%} {% load static %} {% block content %}
 
 <section class="field">
   <!-- <h1>Events</h1> -->
@@ -153,4 +153,6 @@
   </div>
 </section>
 
+<script src="{% static 'scripts/timerMethods.js' %}" type="module"></script>
+<script src="{% static 'scripts/calendarMethods.js' %}" type="module"></script>
 {% endblock %}

@@ -119,6 +119,19 @@ function renderEventCard(userEvent, cardContainer) {
   const card = document.createElement("div");
   card.classList.add("primary-card");
   card.classList.add("card");
+  card.setAttribute("target-event-id", `${userEvent.id}`);
+
+  const timer = document.createElement("div");
+  timer.classList.add("countdown");
+  timer.setAttribute(
+    "data_targetdate",
+    userEvent.getAttribute("data-startdate")
+  );
+
+  const result = document.createElement("div");
+  result.classList.add("result");
+  timer.appendChild(result);
+  card.appendChild(timer);
 
   //Title
   const title = document.createElement("p");
@@ -176,6 +189,29 @@ function selectCalendarDate(id) {
   cardContainer.appendChild(newEventButton);
 }
 
+function deleteEvent(button) {
+  let csrftoken = getCookie("csrftoken");
+  fetch(`/events/${button.getAttribute("data-eventid")}/remove_event`, {
+    method: "DELETE",
+    headers: { "X-CSRFToken": csrftoken },
+  })
+    .then((response) => {
+      if (response.status == 200) {
+        //Removes event from calendar
+        const calendarEvent = document.querySelector(
+          `#${button.parentElement.getAttribute("target-event-id")}`
+        );
+        calendarEvent.remove();
+        //Removes parent event after removing all children
+        const parentElement = button.parentElement;
+        button.parentElement.innerHTML = "";
+        parentElement.remove();
+      } else {
+        window.location.href = window.location;
+      }
+    })
+    .catch();
+}
 //Adds all the necessary event listeners to main
 const main = document.querySelector("main");
 //Main inputs
@@ -205,6 +241,10 @@ main.addEventListener("click", (event) => {
       ? "reverse"
       : "forward";
     shiftByWeek(direction);
+  }
+  //Delete event
+  if (event.target.classList.contains("delete-event")) {
+    deleteEvent(event.target);
   }
 });
 
