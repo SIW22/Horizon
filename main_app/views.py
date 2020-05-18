@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse
 from django.db.models import Q
 from django.core import serializers
-from .models import Event, Profile, Profile_to_Event_rel, ContactForm
+from .models import Event, Profile, Profile_to_Event_rel
 from .models import Event, Profile, Profile_to_Event_rel
 from django.contrib.auth.models import User
 from .forms import EventForm
@@ -142,35 +142,3 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form}
     return render(request, 'registration/signup.html', context)
-
-
-def contact(request):
-    if request.method == 'POST':
-        contact_form = ContactForm(request.POST)
-
-        if contact_form.is_valid():
-            name = contact_form.cleaned_data['name']
-            message = contact_form.cleaned_data['message']
-            sender = contact_form.cleaned_data['sender']
-            phone = contact_form.cleaned_data['phone']
-            cc_myself = contact_form.cleaned_data['cc_myself']
-
-            recipients = ['noreply.autohorizon@gmail.com']
-            if cc_myself:
-                recipients.append(sender)
-
-            send_mail(name, message, sender, recipients)
-            contact_form.save()
-            print('Successful')
-            return redirect('contact')
-        else:
-            print('Fails')
-
-    else:
-        contact_form = ContactForm(request.POST)
-
-    context = {
-        "contact_form": contact_form,
-    }
-    template = 'contact.html'
-    return render(request, template, context)
