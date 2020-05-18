@@ -70,7 +70,7 @@ body {
   margin-right: 15px;
   color: white;
   font-size: 15px;
-  display: none;
+  /* display: none; */
 }
 
 .timer-container {
@@ -250,14 +250,21 @@ body {
 /* FOR SCREENS 600 PIXELS AND WIDER */
 
 @media only screen and (min-width: 600px) {
-  .field {
-    flex-direction: column;
-  }
-}
-@media only screen and (min-width: 600px) {
   .nav-banner {
     width: 100%;
     height: 75px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .logo-glow {
+    width: 200px;
+    margin: 41.5px 8px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .logo-type {
+    width: 150px;
+    margin: 41.5px 30px;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -266,13 +273,41 @@ body {
     width: 100vw;
   }
 }
+@media only screen and (min-width: 600px) {
+  .main-countdown {
+    width: 225px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .hamburger-nav {
+    margin: 30px 20px 0 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .hamburger {
+    height: 35px;
+    margin-top: 14px;
+  }
+}
 
 
 /* FOR SCREENS 768 PIXELS AND WIDER */
 
 @media only screen and (min-width: 768px) {
-  .field {
-    flex-direction: column;
+  .countdown {
+  transform: translateY(-113%);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logo-glow {
+    width: 250px;
+    margin-top: 29.5px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logo-type {
+    width: 200px;
+    margin-top: 29.5px;
   }
 }
 
@@ -282,22 +317,42 @@ body {
 @media only screen and (min-width: 992px) {
   .field {
     flex-direction: row;
-  }
-  .countdown {
-    transform: translateY(-100%);
+    justify-content: center;
+    align-items: center;
   }
 }
-
+@media only screen and (min-width: 992px) {
+  .day-block, .day-marker {
+    width: 6.5vw;
+    height: 6.375vw; 
+  }
+}
+@media only screen and (min-width: 992px) {
+  .calendar, .week-banner {
+    width: 45.5vw;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .day-marker {
+    height: 30px;
+    margin-top: 17px; 
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hamburger-nav {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .nav-buttons {
+    display: flex;
+  }
+}
 
 /* FOR SCREENS 1200 PIXELS AND WIDER */
 
 @media only screen and (min-width: 1200px) {
-  .field {
-    flex-direction: row;
-  }
-  .countdown {
-    transform: translateY(-100%);
-  }
+ 
 }
   /* 
   .countdown {
