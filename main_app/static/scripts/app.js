@@ -1,8 +1,10 @@
 import { updateCountdowns } from "./timerMethods.js";
+import { getCookie } from "./shared.js";
 
 function updateNavTimer() {
   const mainTimer = document.querySelector(".main-countdown");
-  mainTimer.setAttribute("data_targetdate", "2020-05-18");
+  const today = luxon.DateTime.local();
+  mainTimer.setAttribute("data_targetdate", today.toFormat("yyyy-LL-dd"));
   updateCountdowns();
 }
 
