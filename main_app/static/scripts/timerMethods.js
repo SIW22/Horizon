@@ -53,7 +53,7 @@ function updateMainCountdown(eventJson) {
 
 function renderDurationString(timeDifference) {
   if (timeDifference.seconds < 0) {
-    return `0:0:0`;
+    return `00:00:00`;
   }
   let adjustedDays = Math.floor(
     luxon.Duration.fromObject(timeDifference).shiftTo("days").get("days")
