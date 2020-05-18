@@ -95,4 +95,4 @@ setInterval(function () {
   updateCountdowns();
 }, 500);
 
-export { updateCountdowns };
+export { updateCountdowns, queryForMainCountdown };
