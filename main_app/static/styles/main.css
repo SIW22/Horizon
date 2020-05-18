@@ -19,47 +19,55 @@ body {
 
 .nav-banner {
   width: 100%;
-  height: 75px;
+  height: 39px;
   background-color: #7FCDEE;
-  display: flex;
-  justify-content: left;
-  align-items: center;
   z-index: 0;
 }
 
 .logo-glow { 
+  float: left;
   position: absolute;
-  margin-top: 8px;
-  margin-left: 85px;
+  margin-top: 17px;
+  margin-left: 5px;
   z-index: 10;
-  /* opacity: 0; */
-  transition: opacity .7s ease-in;
+  width: 120px;
 }
 
 .logo-type {
+  float: left;
   position: absolute;
-  margin-top: 8px;
-  margin-left: 120px;
+  margin-top: 16.5px;
+  margin-left: 15px;
   z-index: 10;
-  /* opacity: 0; */
-  transition: opacity 1.5s ease-in;
+  width: 100px;
 }
 
 .nav-banner-overlay {
-  height: 25px;
+  height: 13px;
   width: 100vw;
   background-color: #54BCE8;
   position: relative;
   z-index: 30;
 }
 
+.hamburger-nav {
+  float: right;
+}
+
+.hamburger {
+  height: 25px;
+  margin: 18px 15px;
+}
+
 .nav-buttons {
-  display: absolute;
+  float: right;
+  display: flex;
   align-items: right;
+  display: none;
 }
 
 .nav-link {
-  margin-right: 15%;
+  margin-right: 15px;
   color: white;
   font-size: 15px;
   text-decoration: none;
@@ -73,10 +81,8 @@ body {
 }
 
 .main-countdown {
-  width: 15vw;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-100px);
+  width: 90vw;
+  max-width: 375px;
   background-color: #29ABE2;
   color: white;
   font-size: 20px;
@@ -84,13 +90,18 @@ body {
   align-self: center;
   padding: 5px;
   border-radius: 10px;
+  border: 0 0 0 1px #3f8dae;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 90;
   box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+}
 
+.event-countdown {
+  width: 45vw;
+  max-width: 150px;
 }
 
 .result {
@@ -106,7 +117,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 
@@ -114,17 +125,18 @@ body {
 
 
 .cards {
-  margin: 1vw;
+  margin: 5vw;
   height: 35.25vw;
-  width: 46vw;
+  width: 91vw;
   transition: .3s linear;
   overflow: auto;
-  border-radius: 20px;
+  border-radius: 10px;
+  background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
 }
 
 .card {
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   transform: translateY();
@@ -132,7 +144,6 @@ body {
 
 .card-header {
   height: 6.375vw;
-
 }
 
 .card-content {
@@ -153,7 +164,7 @@ body {
 }
 
 .calendar, .week-banner {
-  width: 45.5vw;
+  width: 91vw;
   height: auto;
   display: flex;
   justify-content: center;
@@ -162,33 +173,32 @@ body {
 }
 
 .day-block, .day-marker {
-  width: 6.5vw;
-  height: 6.375vw; 
+  width: 13vw;
+  height: 12vw; 
   color: #1A1A1A;
   padding: 0;
   text-align: center;
   background-color: #7fcdee;
-  /* outline: 1px solid #3f8dae; */
   box-shadow: 0 0 0 1px #3f8dae;
   display: flex;
 }
 
 .day-marker {
   height: 30px;
-  margin-top: 17px; 
   align-items: center;
 }
 
 .day-tag {
   margin-left: 5px;
   color: #1A1A1A;
+  font-size: 10pt;
 }
 
 .day-square {
-  /* margin-left: 5px; */
   color: #1A1A1A;
+  font-size: 7pt;
   max-height: 1.5em;
-  min-width: 15px;
+  min-width: 9px;
   padding: 0px 5px;
   background-color: rgba(240,240,240,.5);
 }
@@ -198,20 +208,19 @@ body {
 }
 
 .sun {
-  border-radius: 20px 0 0 0;
+  border-radius: 10px 0 0 0;
 }
 
 .sat {
-  border-radius: 0 20px 0 0;
+  border-radius: 0 10px 0 0;
 }
 
 .calendar-nav-bar {
   height: 30px; 
-  width: 45.5vw;
+  width: 91vw;
   background-color: #7fcdee;
-  /* outline: 1px solid #3f8dae; */
   box-shadow: 0 0 0 1px #3f8dae;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 10px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,8 +247,108 @@ body {
 }
 
 
-@media (min-width: 1000px), screen {
-  
+/* FOR SCREENS 600 PIXELS AND WIDER */
+
+@media only screen and (min-width: 600px) {
+  .nav-banner {
+    width: 100%;
+    height: 75px;
+  }
+
+  .logo-glow {
+    width: 200px;
+    margin: 41.5px 8px;
+  }
+
+  .logo-type {
+    width: 150px;
+    margin: 41.5px 30px;
+  }
+
+  .nav-banner-overlay {
+    height: 25px;
+    width: 100vw;
+  }
+
+  .main-countdown {
+    width: 225px;
+  }
+
+  .hamburger-nav {
+    margin: 30px 20px 0 0;
+  }
+
+  .hamburger {
+    height: 35px;
+    margin-top: 14px;
+  }
+}
+
+
+/* FOR SCREENS 768 PIXELS AND WIDER */
+
+@media only screen and (min-width: 768px) {
+  .countdown {
+  transform: translateY(-113%);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logo-glow {
+    width: 250px;
+    margin-top: 29.5px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .logo-type {
+    width: 200px;
+    margin-top: 29.5px;
+  }
+}
+
+
+/* FOR SCREENS 992 PIXELS AND WIDER */
+
+@media only screen and (min-width: 992px) {
+  .field {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .day-block, .day-marker {
+    width: 6.5vw;
+    height: 6.375vw; 
+  }
+}
+@media only screen and (min-width: 992px) {
+  .calendar, .week-banner {
+    width: 45.5vw;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .day-marker {
+    height: 30px;
+    margin-top: 17px; 
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hamburger-nav {
+    display: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .nav-buttons {
+    display: flex;
+  }
+}
+
+/* FOR SCREENS 1200 PIXELS AND WIDER */
+
+@media only screen and (min-width: 1200px) {
+ 
+}
+  /* 
   .countdown {
     transform: translateY(0px);
   }
@@ -258,4 +367,78 @@ body {
     width: 90vw;
     height: auto;
   }
+
+  .nav-banner {
+    width: 100%;
+    height: 75px;
+  }
+
+  .nav-banner-overlay {
+    height: 25px;
+    width: 100vw;
+  }
+} 
+
+.calendar, .week-banner {
+  width: 45.5vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+.day-block, .day-marker {
+  width: 6.5vw;
+  height: 6.375vw; 
+  color: #1A1A1A;
+  padding: 0;
+  text-align: center;
+  background-color: #7fcdee;
+  outline: 1px solid #3f8dae; 
+  box-shadow: 0 0 0 1px #3f8dae;
+  display: flex;
+}
+
+.day-marker {
+  height: 30px;
+  margin-top: 17px; 
+  align-items: center;
+}
+
+.day-tag {
+  margin-left: 5px;
+  color: #1A1A1A;
+}
+
+.day-square {
+  margin-left: 5px;
+  color: #1A1A1A;
+  max-height: 1.5em;
+  min-width: 15px;
+  padding: 0px 5px;
+  background-color: rgba(240,240,240,.5);
+}
+
+
+*/ 
+
+/* .main-countdown {
+  width: 15vw;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-100px);
+  background-color: #29ABE2;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+  align-self: center;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+} */
