@@ -1,30 +1,7 @@
 {% extends 'base.html'%} {% load static %} {% block content %}
 
 <section class="field">
-  <!-- <h1>Events</h1> -->
-  <div class="cards">
-    <!-- <div class="primary-card card">
-      <div class="event-loop event">
-        {% if events %}
-        <ul>
-          {% for event in events %}
-          <li>
-            <div><span class="event-title">{{event.title}}</span> -- <span class="event-where">{{event.where}}</span></div>
-            <div class="event-date">{{event.start_date}} to {{event.end_date}}</div>
-            <div>
-              <a class="edit-event" href="/events/{{event.id}}/edit">Edit</a>
-              <button class="delete-event" data_eventId="{{event.id}}">Delete</button>
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-      </div>
-    </div>
-
-    <div class="primary-card card"></div>
-    <div class="primary-card card"></div> -->
-  </div>
+  <div class="cards"></div>
 
   <div class="calendar">
     <div class="day-marker sun we"><span class="day-tag">S</span></div>
