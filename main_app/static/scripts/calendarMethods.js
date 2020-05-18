@@ -1,4 +1,5 @@
 import { getCookie } from "./shared.js";
+import { updateCountdowns } from "./timerMethods.js";
 let currentDate;
 const calendarDuration = 34;
 
@@ -169,7 +170,6 @@ function renderEventCard(userEvent, cardContainer) {
 }
 
 function selectCalendarDate(id) {
-  //Get our selected date block
   const userEvents = document
     .querySelector(`#${id}`)
     .querySelectorAll(".calendar-event-content");
@@ -179,6 +179,8 @@ function selectCalendarDate(id) {
   userEvents.forEach((userEvent) => {
     renderEventCard(userEvent, cardContainer);
   });
+
+  updateCountdowns();
 
   //Render add event button
   const newEventButton = document.createElement("a");
@@ -212,16 +214,15 @@ function deleteEvent(button) {
     })
     .catch();
 }
-//Adds all the necessary event listeners to main
+
 const main = document.querySelector("main");
-//Main inputs
 main.addEventListener("input", (event) => {
   //Change the input
   if (event.target.getAttribute("id") === "date-thing") {
     setUpCalendar();
   }
 });
-//Main clicks
+
 main.addEventListener("click", (event) => {
   //If you click a day block itself
   if (event.target.classList.contains("day-block")) {
@@ -248,5 +249,4 @@ main.addEventListener("click", (event) => {
   }
 });
 
-//Set up the calendar when you first load the page
 setUpCalendar();

@@ -11,7 +11,8 @@ function renderDurationString(timeDifference) {
   return `${splitValues[0]}:${splitValues[1]}:${splitValues[2]}`;
 }
 
-function updateCountdowns(countdownObjects) {
+function updateCountdowns() {
+  const countdownObjects = document.querySelectorAll(".countdown");
   countdownObjects.forEach((targetObject) => {
     const targetDate = targetObject.getAttribute("data_targetDate");
     const targetDateArray = targetDate.split("-");
@@ -33,6 +34,7 @@ function updateCountdowns(countdownObjects) {
 }
 
 setInterval(function () {
-  const timerObjects = document.querySelectorAll(".countdown");
-  updateCountdowns(timerObjects);
-}, 50);
+  updateCountdowns();
+}, 500);
+
+export { updateCountdowns };
