@@ -56,6 +56,27 @@ def events_new(request):
 
 
 @login_required
+def events_new_selected(request, selected_date):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save(commit=False)
+            event.end_date = event.start_date
+            event.save()
+            profile = Profile.objects.get(user=request.user)
+            new_rel = Profile_to_Event_rel(
+                profile_id=profile, event_id=event, permission_level=1)
+            new_rel.save()
+            return redirect('index')
+    else:
+        print("You did it")
+        data = {'start_date': selected_date}
+        form = EventForm(initial=data)
+        context = {'form': form}
+        return render(request, 'events/new.html', context)
+
+
+@login_required
 def edit_event(request, event_id):
     event = Event.objects.get(id=event_id)
     if request.method == 'POST':

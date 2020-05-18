@@ -185,8 +185,9 @@ function selectCalendarDate(id) {
   //Render add event button
   const newEventButton = document.createElement("a");
   newEventButton.style.display = "block";
-  newEventButton.setAttribute("href", `/events/new`); //Add the date string at the end of this for optional parameter
-  newEventButton.setAttribute("data-selectedDate", `${id}`);
+  const selectedDate = id.substring(5, id.length);
+  newEventButton.setAttribute("href", `/events/new/${selectedDate}`); //Add the date string at the end of this for optional parameter
+  newEventButton.setAttribute("data-selectedDate", `${selectedDate}`);
   newEventButton.innerHTML = "Create New Event";
   cardContainer.appendChild(newEventButton);
 }
