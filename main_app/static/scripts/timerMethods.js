@@ -1,4 +1,5 @@
 function renderDurationString(timeDifference) {
+  console.log(timeDifference.c);
   let adjustedDays = Math.floor(
     luxon.Duration.fromObject(timeDifference).shiftTo("days").get("days")
   );
