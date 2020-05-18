@@ -8,8 +8,6 @@
 
 body {
   font-family: futura;
-  margin: 0;
-  padding: 0;
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
@@ -19,18 +17,9 @@ body {
 /* HEADER */
 
 
-header {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .nav-banner {
   width: 100%;
   height: 75px;
-  align-self: flex-start;
   background-color: #7FCDEE;
   display: flex;
   justify-content: left;
@@ -40,7 +29,7 @@ header {
 
 .logo-glow { 
   position: absolute;
-  margin-top: -13px;
+  margin-top: 8px;
   margin-left: 85px;
   z-index: 10;
   /* opacity: 0; */
@@ -49,7 +38,7 @@ header {
 
 .logo-type {
   position: absolute;
-  margin-top: -13px;
+  margin-top: 8px;
   margin-left: 120px;
   z-index: 10;
   /* opacity: 0; */
@@ -60,29 +49,47 @@ header {
   height: 25px;
   width: 100vw;
   background-color: #54BCE8;
-  align-self: flex-end;
   position: relative;
-  margin-bottom: -25;
   z-index: 30;
+}
+
+.nav-buttons {
+  display: absolute;
+  align-items: right;
+}
+
+.nav-link {
+  margin-right: 15%;
+  color: white;
+  font-size: 15px;
+}
+
+.timer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .countdown {
   width: 15vw;
   left: 50%;
   top: 50%;
+  transform: translateY(-100px);
   background-color: #29ABE2;
   color: white;
   font-size: 20px;
   margin-top: 5px;
   align-self: center;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
   z-index: 90;
   box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+
 }
 
 .result {
@@ -136,7 +143,6 @@ header {
   border-radius: 20px;
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
-  /* outline: 1px solid #3f8dae; */
   transform: translateY();
 }
 

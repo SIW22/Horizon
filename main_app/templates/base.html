@@ -35,20 +35,30 @@
           <div class="logo">
             <img class='logo-type' src="{% static 'images/horizon_type.png' %}"></img>
           </div>
-
-          <div class="countdown" data_targetDate="2020-06-01" id="time-1"> Next Good Thing: 
-            <div class="result"></div>
-          </div>
+          
+          <nav class="nav-buttons">
+            <span class="nav-link" id="events">events</span>
+            <span class="nav-link" id="new-event">+event</span>
+            <span class="nav-link" id="login">login</span>
+            <span class="nav-link" id="logout">logout</span>
+          </nav>  
 
         </div>
+        
+      </div>
 
-        <div class="nav-banner-overlay"></div>
+      <div class="nav-banner-overlay"></div>
 
+      <div class="timer-container">
+        <div class="countdown" data_targetDate="2020-06-01" id="time-1"> Next Good Thing: 
+          <div class="result"></div>
+        </div>
       </div>
       
     </header>
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <!-- <nav class="navbar">
       <a class="navbar-brand" href="/">Horizon</a>
       <button>
         <span class="navbar-toggler-icon"></span>
@@ -70,6 +80,8 @@
         </ul>
       </div>
     </nav> -->
+
+
     <main class="container">
       {% block content %} 
       {% endblock %}
