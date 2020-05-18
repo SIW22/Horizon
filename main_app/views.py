@@ -41,7 +41,9 @@ def events_new(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
-            event = form.save()
+            event = form.save(commit=False)
+            event.end_date = event.start_date
+            event.save()
             profile = Profile.objects.get(user=request.user)
             new_rel = Profile_to_Event_rel(
                 profile_id=profile, event_id=event, permission_level=1)
