@@ -1,5 +1,5 @@
 import { getCookie } from "./shared.js";
-import { updateCountdowns } from "./timerMethods.js";
+import { updateCountdowns, queryForMainCountdown } from "./timerMethods.js";
 let currentDate;
 const calendarDuration = 34;
 
@@ -209,6 +209,8 @@ function deleteEvent(button) {
         const parentElement = button.parentElement;
         button.parentElement.innerHTML = "";
         parentElement.remove();
+
+        queryForMainCountdown();
       } else {
         window.location.href = window.location;
       }
