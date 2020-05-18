@@ -13,6 +13,8 @@ urlpatterns = [
          views.remove_event, name='remove_event'),
     path('events/get/<str:start_date>/<str:end_date>',
          views.get_events, name='get_events'),
+    path('events/get-single/<str:start_date>',
+         views.get_next_event, name='get_next_event'),
     # Friends
     path('profile/', views.friends_index, name='friends_index'),
     # Auth related paths

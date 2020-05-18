@@ -37,6 +37,18 @@ def get_events(request, start_date, end_date):
 
 
 @login_required
+def get_next_event(request, start_date):
+    profile = Profile.objects.get(user=request.user)
+    events = Event.objects.filter(
+        profile_to_event_rel__profile_id=profile.id).filter(Q(start_date__gte=start_date))
+    print(list(events)[0])
+    events_json = serializers.serialize('json', list(events)[0])
+
+    # return JsonResponse(events_json, safe=False)
+    return JsonResponse({"status": 200}, safe=False)
+
+
+@login_required
 def events_new(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
