@@ -125,26 +125,34 @@ body {
 }
 
 .card {
-  /* border-radius: 10px; */
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   transform: translateY();
+  margin-top: 0px;
 }
 
 .card-header {
   height: 6vw;
   width: 100vw;
   background-color: rgba(240, 240, 240, 0.5);
+  color: 1a1a1a;
+
 }
 
 .event-countdown {
   width: 45vw;
   max-width: 150px;
   color: whitesmoke;
+  padding: 2px 6px;
+  border-radius: 0 0 0 10px;
+  background-color: #29abe2;
+  font-size: 10px;
+  float: right;
 }
 
 .card-content {
-  /* padding: 15px; */
+  padding: 6px;
+  line-height: 18px;
 }
 
 .primary-card {
