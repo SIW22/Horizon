@@ -8,4 +8,16 @@ function updateNavTimer() {
   updateCountdowns();
 }
 
+//Deals with hamburgler menu
+const hamburger = document.getElementById("myTopnav");
+hamburger.addEventListener("click", function (event) {
+  const button = event.target;
+  const navGroup = button.parentNode.parentNode;
+  if (navGroup.classList.contains("responsive")) {
+    navGroup.classList.remove("responsive");
+  } else {
+    navGroup.classList.add("responsive");
+  }
+});
+
 updateNavTimer();
