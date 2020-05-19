@@ -64,7 +64,7 @@ body {
   align-self: center;
   padding: 5px;
   border-radius: 10px;
-  border: 0 0 0 1px #3f8dae;
+  border: 1px solid #3f8dae;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,15 +72,6 @@ body {
   z-index: 90;
   box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
 }
-
-/* .hamburger-nav {
-  float: right;
-}
-
-.hamburger {
-  height: 25px;
-  margin: 18px 15px;
-} */
 
 .nav-buttons {
   float: right;
@@ -163,6 +154,7 @@ body {
 .card-content {
   padding: 6px;
   line-height: 18px;
+  color: #1a1a1a;
 }
 
 .event-button {
@@ -328,20 +320,25 @@ body {
   .card-header, .event-title, .event-where {
     font-size: 20px;
     margin-top: 2px;
-    padding: 4px 8px;
+    padding: 4px 0 0 8px;
   }
   .card {
     height: 16vw;
   }
-
+  #logout {
+    margin-right: 25px;
+  }
 }
 
 /* FOR SCREENS 768 PIXELS AND WIDER */
 
 @media only screen and (min-width: 768px) {
-  .countdown {
+  .main-countdown {
     transform: translateY(-113%);
   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .logo-glow {
     width: 250px;
     margin-top: 29.5px;
@@ -350,6 +347,26 @@ body {
     width: 200px;
     margin-top: 29.5px;
   }
+  .cards {
+    transform: translateY(-32%);
+    height: 40vw;
+  }
+  .calendar-event-content {
+    font-size: 15px;
+  }
+  .card-header, .event-title, .event-where {
+    font-size: 22px;
+    line-height: 1.5em;
+  }
+  .card-header {
+    margin-top: 0;
+  }
+  .calendar {
+    transform: translateY(-18%);
+  }
+  .new-event-card-button {
+    font-size: 20px;
+  }
 }
 
 /* FOR SCREENS 992 PIXELS AND WIDER */
@@ -357,12 +374,31 @@ body {
 @media only screen and (min-width: 992px) {
   .field {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
-  .calendar,
-  .week-banner {
+  .main-countdown {
+    transform: translateY(-113%);
+  }
+  .calendar {
     width: 45.5vw;
+    margin-bottom: 1.5vw;
+    top: 50%;
+    transform: translateY(-13%);
+  }
+  .card-header {
+    height: 1.5em;
+    margin-top: 0;
+  }
+  .cards {
+    width: 45.5vw;
+    height: 37.75vw;
+    margin: 3vw;
+    top: 50%;
+    transform: translateY(-13%);
+  }
+  .card {
+    height: 10.5vw;
   }
   .day-block,
   .day-marker {
@@ -373,109 +409,21 @@ body {
     height: 30px;
     margin-top: 17px;
   }
-  .hamburger-nav {
-    display: none;
-  }
   .nav-buttons {
     display: flex;
+  }
+  .date-input {
+    font-size: 10px;
   }
 }
 
 /* FOR SCREENS 1200 PIXELS AND WIDER */
 
 @media only screen and (min-width: 1200px) {
-}
-/* 
-  .countdown {
-    transform: translateY(0px);
-  }
-
-  .field {
-    flex-direction: row;
-    width: 100%;
-  }
-
   .cards {
-    width: 90vw;
-    height: auto;
+    height: 36vw;
+    margin: 3vw;
+    top: 50%;
+    transform: translateY(-14%);
   }
-
-  .calendar, .week-banner {
-    width: 90vw;
-    height: auto;
-  }
-
-  .nav-banner {
-    width: 100%;
-    height: 75px;
-  }
-
-  .nav-banner-overlay {
-    height: 25px;
-    width: 100vw;
-  }
-} 
-
-.calendar, .week-banner {
-  width: 45.5vw;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
-
-.day-block, .day-marker {
-  width: 6.5vw;
-  height: 6.375vw; 
-  color: #1A1A1A;
-  padding: 0;
-  text-align: center;
-  background-color: #7fcdee;
-  outline: 1px solid #3f8dae; 
-  box-shadow: 0 0 0 1px #3f8dae;
-  display: flex;
-}
-
-.day-marker {
-  height: 30px;
-  margin-top: 17px; 
-  align-items: center;
-}
-
-.day-tag {
-  margin-left: 5px;
-  color: #1A1A1A;
-}
-
-.day-square {
-  margin-left: 5px;
-  color: #1A1A1A;
-  max-height: 1.5em;
-  min-width: 15px;
-  padding: 0px 5px;
-  background-color: rgba(240,240,240,.5);
-}
-
-
-*/
-
-/* .main-countdown {
-  width: 15vw;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-100px);
-  background-color: #29ABE2;
-  color: white;
-  font-size: 20px;
-  margin-top: 5px;
-  align-self: center;
-  padding: 5px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 90;
-  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
-} */
