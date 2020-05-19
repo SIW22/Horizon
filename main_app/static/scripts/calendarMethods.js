@@ -152,23 +152,28 @@ function renderEventCard(userEvent, cardContainer) {
     "href",
     `/events/${userEvent.getAttribute("data-pk")}/edit`
   );
-  
-  const editImg = document.createElement("img");
-  editImg.setAttribute("src", "ath/to/source");
-  editLink.appendChild(editImg);
 
+  // const editImg = document.createElement("img");
+  // editImg.setAttribute("src", "static/images/edit-button.svg");
+  // editLink.appendChild(editImg);
+  const editImg = document.createElement("i");
+  editImg.classList.add("fas", "fa-pencil-alt");
+  editLink.appendChild(editImg);
+  card.appendChild(editLink);
 
   //Delete
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-event", "event-button");
   deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
 
-  const deleteImg = document.createElement("img");
-  deleteImg.setAttribute("src", "ath/to/source");
-  editLink.appendChild(deleteImg);
+  // const deleteImg = document.createElement("img");
+  // deleteImg.setAttribute("src", "static/images/delete-button.svg");
+  // deleteButton.appendChild(deleteImg);
+  const deleteImg = document.createElement("i");
+  deleteImg.classList.add("fas", "fa-trash-alt");
+  deleteButton.appendChild(deleteImg);
+  card.appendChild(deleteButton);
 
-
-  deleteButton.innerHTML = "X";
   card.appendChild(deleteButton);
 
   //Add the card to the card container
