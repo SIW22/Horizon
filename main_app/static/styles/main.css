@@ -154,6 +154,13 @@ body {
 
 /* CALENDAR */
 
+.calendar-event-content {
+  font-size: 8px;
+  align-self: flex-end;
+  align-self: center;
+}
+
+
 #date-thing {
   text-align: center;
 }
@@ -174,15 +181,16 @@ body {
   height: 12vw;
   color: #1a1a1a;
   padding: 0;
-  text-align: center;
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   display: flex;
+  flex-direction: column;
 }
 
 .day-marker {
   height: 30px;
   align-items: center;
+  flex-direction: row;
 }
 
 .day-tag {
@@ -198,6 +206,7 @@ body {
   min-width: 9px;
   padding: 0px 5px;
   background-color: rgba(240, 240, 240, 0.5);
+  justify-content: left;
 }
 
 .we {
