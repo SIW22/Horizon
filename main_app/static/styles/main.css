@@ -1,6 +1,5 @@
 /* UNIVERSAL */
 
-
 * {
   margin: 0;
   padding: 0;
@@ -13,18 +12,16 @@ body {
   background-color: whitesmoke;
 }
 
-
 /* HEADER */
-
 
 .nav-banner {
   width: 100vw;
   height: 39px;
-  background-color: #7FCDEE;
+  background-color: #7fcdee;
   z-index: 0;
 }
 
-.logo-glow { 
+.logo-glow {
   float: left;
   position: absolute;
   margin-top: 17px;
@@ -45,7 +42,7 @@ body {
 .nav-banner-overlay {
   height: 13px;
   width: 100vw;
-  background-color: #54BCE8;
+  background-color: #54bce8;
   position: relative;
   z-index: 30;
 }
@@ -74,6 +71,10 @@ body {
   text-decoration: none;
 }
 
+.responsive .nav-buttons {
+  display: flex;
+}
+
 .timer-container {
   width: 100%;
   display: flex;
@@ -84,7 +85,7 @@ body {
 .main-countdown {
   width: 90vw;
   max-width: 375px;
-  background-color: #29ABE2;
+  background-color: #29abe2;
   color: white;
   font-size: 20px;
   margin-top: 5px;
@@ -110,9 +111,7 @@ body {
   font-size: 35px;
 }
 
-
 /* SITE FIELD */
-
 
 .field {
   display: flex;
@@ -121,15 +120,13 @@ body {
   align-items: center;
 }
 
-
 /* CARDS */
-
 
 .cards {
   margin: 5vw;
   height: 35.25vw;
   width: 91vw;
-  transition: .3s linear;
+  transition: 0.3s linear;
   overflow: auto;
   border-radius: 10px;
   background-color: #7fcdee;
@@ -156,15 +153,14 @@ body {
   width: 100%;
 }
 
-
 /* CALENDAR */
-
 
 #date-thing {
   text-align: center;
 }
 
-.calendar, .week-banner {
+.calendar,
+.week-banner {
   width: 91vw;
   height: auto;
   display: flex;
@@ -173,10 +169,11 @@ body {
   flex-wrap: wrap;
 }
 
-.day-block, .day-marker {
+.day-block,
+.day-marker {
   width: 13vw;
-  height: 12vw; 
-  color: #1A1A1A;
+  height: 12vw;
+  color: #1a1a1a;
   padding: 0;
   text-align: center;
   background-color: #7fcdee;
@@ -191,17 +188,17 @@ body {
 
 .day-tag {
   margin-left: 5px;
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 10pt;
 }
 
 .day-square {
-  color: #1A1A1A;
+  color: #1a1a1a;
   font-size: 7pt;
   max-height: 1.5em;
   min-width: 9px;
   padding: 0px 5px;
-  background-color: rgba(240,240,240,.5);
+  background-color: rgba(240, 240, 240, 0.5);
 }
 
 .we {
@@ -217,7 +214,7 @@ body {
 }
 
 .calendar-nav-bar {
-  height: 30px; 
+  height: 30px;
   width: 91vw;
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
@@ -252,8 +249,6 @@ body {
   cursor: pointer;
 }
 
-
-
 /* FOR SCREENS 600 PIXELS AND WIDER */
 
 @media only screen and (min-width: 600px) {
@@ -285,12 +280,11 @@ body {
   }
 }
 
-
 /* FOR SCREENS 768 PIXELS AND WIDER */
 
 @media only screen and (min-width: 768px) {
   .countdown {
-  transform: translateY(-113%);
+    transform: translateY(-113%);
   }
   .logo-glow {
     width: 250px;
@@ -302,7 +296,6 @@ body {
   }
 }
 
-
 /* FOR SCREENS 992 PIXELS AND WIDER */
 
 @media only screen and (min-width: 992px) {
@@ -311,16 +304,18 @@ body {
     justify-content: center;
     align-items: center;
   }
-  .calendar, .week-banner {
+  .calendar,
+  .week-banner {
     width: 45.5vw;
   }
-  .day-block, .day-marker {
+  .day-block,
+  .day-marker {
     width: 6.5vw;
-    height: 6.375vw; 
+    height: 6.375vw;
   }
   .day-marker {
     height: 30px;
-    margin-top: 17px; 
+    margin-top: 17px;
   }
   .hamburger-nav {
     display: none;
@@ -333,9 +328,8 @@ body {
 /* FOR SCREENS 1200 PIXELS AND WIDER */
 
 @media only screen and (min-width: 1200px) {
- 
 }
-  /* 
+/* 
   .countdown {
     transform: translateY(0px);
   }
@@ -408,7 +402,7 @@ body {
 }
 
 
-*/ 
+*/
 
 /* .main-countdown {
   width: 15vw;
