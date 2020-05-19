@@ -1,0 +1,86 @@
+{% extends 'base.html'%} {% block content%}
+
+<h1>About Horizon</h1>
+
+<div class="company-description">
+  <p>
+    This is where we have some information briefly talking about what Horizon
+    is, who created the company, and how we're going to take over the world with
+    positivity and good CSS
+  </p>
+  <p>Meet our team!</p>
+</div>
+
+<div class="team-members">
+  <div class="team-members__member-card">
+    <img
+      class="member-card__headshot"
+      src="https://picsum.photos/200/300"
+      alt="Skot Walker"
+    />
+    <p class="member-card__bio">
+      Skot likes Adobe Illustrator and prolific pop culture references. He and
+      his wife Amy live in a pineapple-townhouse under the sea, where Skot is
+      the co-head of Bikini Bottom's HOA
+    </p>
+  </div>
+  <div class="team-members__member-card">
+    <img
+      class="member-card__headshot"
+      src="https://picsum.photos/200/300"
+      alt="Julian Ochoa"
+    />
+    <p class="member-card__bio">
+      Julian subsists on guacamole, chicken tendys, and limitless snark. His
+      greatest ambition is to bring down the hypocrisy of any and all university
+      Psychology departments, and, like Skot, he lives in a pineapple in San
+      Francisco
+    </p>
+  </div>
+  <div class="team-members__member-card">
+    <img
+      class="member-card__headshot"
+      src="https://picsum.photos/200/300"
+      alt="Matt Miner"
+    />
+    <p class="member-card__bio">
+      Matt likes JavaScript, correcting people, and his dog Berlin. He and his
+      wife Lauren live in an asbestos and lead-paint shed in Berklandville where
+      Matt forgets what's in the fridge and eats his bodyweight in Trail mix
+    </p>
+  </div>
+</div>
+
+<style>
+  .timer-container {
+    display: none;
+  }
+
+  .company-description {
+    padding: 10px;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .team-members__member-card {
+    padding: 10px;
+    margin: 10px;
+    background-color: #29abe2;
+    max-width: 300px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member-card__headshot {
+    display: block;
+    border-radius: 10px;
+  }
+</style>
+<script></script>
+{% endblock %}
