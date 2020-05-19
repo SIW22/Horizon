@@ -53,7 +53,7 @@ function updateMainCountdown(eventJson) {
 
 function renderDurationString(timeDifference) {
   if (timeDifference.seconds < 0) {
-    return `00:00:00`;
+    return `00:00:00:00`;
   }
   let adjustedDays = Math.floor(
     luxon.Duration.fromObject(timeDifference).shiftTo("days").get("days")
@@ -62,9 +62,10 @@ function renderDurationString(timeDifference) {
     days: adjustedDays,
     hours: timeDifference.hours,
     minutes: timeDifference.minutes,
-  }).toFormat("dd-hh-mm");
+    seconds: timeDifference.seconds,
+  }).toFormat("dd-hh-mm-ss");
   const splitValues = adjustedDifference.split("-");
-  return `${splitValues[0]}:${splitValues[1]}:${splitValues[2]}`;
+  return `${splitValues[0]}:${splitValues[1]}:${splitValues[2]}:${splitValues[3]}`;
 }
 
 function updateCountdowns() {
@@ -93,6 +94,6 @@ queryForMainCountdown();
 
 setInterval(function () {
   updateCountdowns();
-}, 500);
+}, 200);
 
 export { updateCountdowns, queryForMainCountdown };
