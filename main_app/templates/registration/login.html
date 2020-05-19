@@ -1,11 +1,11 @@
 {% extends 'base.html'%} {% block content%}
-<div class="login-form">
+<div class="signup-login-form">
 
   <div class="misc-text">  
     <h3 class="login-here-text">Login here!</h3>
 
     <p class="new-to-horizon-text">New to Horizon? 
-    <a href="{% url 'signup' %}" class="sign-up-now-text">Sign Up Now!</a></p>
+    <a class="sign-up-now-text" href="{% url 'signup' %}">Sign up now!</a></p>
   </div>
 
   <form action="{% url 'login' %}" method="post">
