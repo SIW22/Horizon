@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,11 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'noreply.autohorizon@gmail.com'
 EMAIL_HOST_PASSWORD = 'lckxwqcfjgoxzwnh'
+
+# Sets Cron
+CRONJOBS = [
+    ('50 19 * * *', 'main_app.cron.my_cron_job')
+]
 
 
 # Database
