@@ -81,7 +81,7 @@ EMAIL_HOST_PASSWORD = 'lckxwqcfjgoxzwnh'
 
 # Sets Cron
 CRONJOBS = [
-    ('50 19 * * *', 'main_app.cron.my_cron_job')
+    ('50 19 * * 0', 'main_app.cron.my_cron_job')
 ]
 
 
