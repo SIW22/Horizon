@@ -133,14 +133,19 @@ body {
 
 .card-header {
   height: 6vw;
-  width: 100vw;
   background-color: rgba(240, 240, 240, 0.5);
-  color: 1a1a1a;
+  color: #1a1a1a;
+}
 
+.default-card-prompt {
+  color: whitesmoke;
+  text-align: center;
+  align-self: center;
+  font-size: 13px;
 }
 
 .event-countdown {
-  width: 26vw;
+  width: auto;
   color: whitesmoke;
   padding: 4px;
   border-radius: 10px;
@@ -151,6 +156,7 @@ body {
 .event-countdown .result {
   font-size: 22px;
   padding: 4px;
+  /* width: auto; */
 }
 
 .card-content {
@@ -160,28 +166,36 @@ body {
 
 .event-button {
   padding: 5px;
+  margin-right: 10px;
   float: right;
-  color: rgba(240, 240, 240, 0.5);
+  color: rgba(240, 240, 240, 0.75);
 }
 
 .event-button:visited {
   color: rgba(240, 240, 240, 0.5);
 }
 
-
 .primary-card {
   height: 50%;
   width: 100%;
 }
 
+.new-event-card-button {
+  align-self: center;
+  padding: 4px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+
 /* CALENDAR */
+
 
 .calendar-event-content {
   font-size: 8px;
   align-self: flex-end;
   align-self: center;
 }
-
 
 #date-thing {
   text-align: center;
@@ -256,6 +270,13 @@ body {
 
 .date-input {
   border-radius: 5px;
+  background-color: #54bce8;
+  color: whitesmoke;
+  box-shadow: 0 0 0 1px inset #3f8dae;
+}
+
+.date-input:focus {
+  box-shadow: 0 0 0 1px solid #3f8dae;
 }
 
 .arrow {

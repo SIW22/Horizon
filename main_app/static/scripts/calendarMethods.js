@@ -220,7 +220,8 @@ function selectCalendarDate(id) {
   const selectedDate = id.substring(5, id.length);
   newEventButton.setAttribute("href", `/events/new/${selectedDate}`); //Add the date string at the end of this for optional parameter
   newEventButton.setAttribute("data-selectedDate", `${selectedDate}`);
-  newEventButton.innerHTML = "Create New Event";
+  newEventButton.classList.add("new-event-card-button");
+  newEventButton.innerHTML = "+Event";
   cardContainer.appendChild(newEventButton);
 }
 
