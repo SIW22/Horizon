@@ -125,27 +125,49 @@ body {
 }
 
 .card {
-  /* border-radius: 10px; */
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   transform: translateY();
+  margin-top: 0px;
 }
 
 .card-header {
   height: 6vw;
   width: 100vw;
   background-color: rgba(240, 240, 240, 0.5);
+  color: 1a1a1a;
+
 }
 
 .event-countdown {
-  width: 45vw;
-  max-width: 150px;
+  width: 26vw;
   color: whitesmoke;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #29abe2;
+  float: right;
+}
+
+.event-countdown .result {
+  font-size: 22px;
+  padding: 4px;
 }
 
 .card-content {
-  /* padding: 15px; */
+  padding: 6px;
+  line-height: 18px;
 }
+
+.event-button {
+  padding: 5px;
+  float: right;
+  color: rgba(240, 240, 240, 0.5);
+}
+
+.event-button:visited {
+  color: rgba(240, 240, 240, 0.5);
+}
+
 
 .primary-card {
   height: 50%;
@@ -153,6 +175,13 @@ body {
 }
 
 /* CALENDAR */
+
+.calendar-event-content {
+  font-size: 8px;
+  align-self: flex-end;
+  align-self: center;
+}
+
 
 #date-thing {
   text-align: center;
@@ -174,15 +203,16 @@ body {
   height: 12vw;
   color: #1a1a1a;
   padding: 0;
-  text-align: center;
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   display: flex;
+  flex-direction: column;
 }
 
 .day-marker {
   height: 30px;
   align-items: center;
+  flex-direction: row;
 }
 
 .day-tag {
@@ -198,6 +228,7 @@ body {
   min-width: 9px;
   padding: 0px 5px;
   background-color: rgba(240, 240, 240, 0.5);
+  justify-content: left;
 }
 
 .we {

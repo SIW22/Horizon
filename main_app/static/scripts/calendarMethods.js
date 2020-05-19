@@ -49,7 +49,7 @@ function renderEvents(eventsJson) {
     const content = document.createElement("p");
     content.classList.add("calendar-event-content");
     content.setAttribute("id", `event-id-${event.pk}`);
-    content.innerHTML = `${event.fields.title} - ${event.fields.where}`;
+    content.innerHTML = `${event.fields.title}`;
     content.setAttribute("data-pk", event.pk);
     content.setAttribute("data-title", event.fields.title);
     content.setAttribute("data-where", event.fields.where);
