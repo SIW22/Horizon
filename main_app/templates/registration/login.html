@@ -1,12 +1,17 @@
 {% extends 'base.html'%} {% block content%}
-<h1>I'm a login!</h1>
+<div class="signup-login-form">
 
-<p>New to Horizon? <a href="{% url 'signup' %}">Sign Up Now!</a></p>
+  <div class="misc-text">  
+    <h3 class="login-here-text">Login here!</h3>
 
-<form action="{% url 'login' %}" method="post">
-  {% csrf_token %} {{form.as_p}}
-  <input type="submit" class="btn" value="Login" />
-  <input type="hidden" name="next" value="{{next}}" />
-</form>
+    <p class="new-to-horizon-text">New to Horizon? 
+    <a class="sign-up-now-text" href="{% url 'signup' %}">Sign up now!</a></p>
+  </div>
 
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" class="btn" value="Login" />
+    <input type="hidden" name="next" value="{{next}}" />
+  </form>
+</div>
 {% endblock %}
