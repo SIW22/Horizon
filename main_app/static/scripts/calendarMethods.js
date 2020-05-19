@@ -121,30 +121,41 @@ function renderEventCard(userEvent, cardContainer) {
   card.classList.add("primary-card", "card");
   card.setAttribute("target-event-id", `${userEvent.id}`);
 
-  const timer = document.createElement("div");
+  const cardContent = document.createElement("div");
+  cardContent.classList.add("card-content");
+
+  const titleTimer = document.createElement("div");
+
+  //Title
+  const title = document.createElement("span");
+  title.classList.add("event-title");
+  title.innerHTML = userEvent.getAttribute("data-title");
+  titleTimer.appendChild(title);
+
+  //Timer
+  const timer = document.createElement("span");
   timer.classList.add("countdown", "event-countdown");
   timer.setAttribute(
     "data_targetdate",
     userEvent.getAttribute("data-startdate")
   );
-
-  const result = document.createElement("div");
+  const result = document.createElement("span");
   result.classList.add("result");
   timer.appendChild(result);
-  card.appendChild(timer);
-
-  //Title
-  const title = document.createElement("p");
-  title.classList.add("event-title", "card-content");
-  title.innerHTML = userEvent.getAttribute("data-title");
-  card.appendChild(title);
+  titleTimer.appendChild(timer);
+  cardContent.appendChild(titleTimer);
 
   //Where
+  const whereDiv = document.createElement("div");
   const where = document.createElement("p");
-  where.classList.add("event-where", "card-content");
+  where.classList.add("event-where");
   where.innerHTML = userEvent.getAttribute("data-where");
-  card.appendChild(where);
+  whereDiv.appendChild(where);
+  cardContent.appendChild(whereDiv);
+  card.append(cardContent);
 
+  const eventActions = document.createElement("div");
+  eventActions.classList.add("event-actions");
   //Edit
   const editLink = document.createElement("a");
   editLink.classList.add("edit-event", "event-button");
@@ -153,28 +164,22 @@ function renderEventCard(userEvent, cardContainer) {
     `/events/${userEvent.getAttribute("data-pk")}/edit`
   );
 
-  // const editImg = document.createElement("img");
-  // editImg.setAttribute("src", "static/images/edit-button.svg");
-  // editLink.appendChild(editImg);
   const editImg = document.createElement("i");
   editImg.classList.add("fas", "fa-pencil-alt");
   editLink.appendChild(editImg);
-  card.appendChild(editLink);
+  eventActions.appendChild(editLink);
 
   //Delete
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-event", "event-button");
   deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
 
-  // const deleteImg = document.createElement("img");
-  // deleteImg.setAttribute("src", "static/images/delete-button.svg");
-  // deleteButton.appendChild(deleteImg);
   const deleteImg = document.createElement("i");
   deleteImg.classList.add("fas", "fa-trash-alt");
   deleteButton.appendChild(deleteImg);
-  card.appendChild(deleteButton);
+  eventActions.appendChild(deleteButton);
 
-  card.appendChild(deleteButton);
+  card.append(eventActions);
 
   //Add the card to the card container
   cardContainer.appendChild(card);
@@ -190,7 +195,17 @@ function selectCalendarDate(id) {
 
   const cardHeader = document.createElement("div");
   cardHeader.classList.add("card-header");
-  cardHeader.innerHTML = id;
+
+  const selectedDateString = id.substring(5, id.length);
+  const dateArray = selectedDateString.split("-");
+  const thisDate = luxon.DateTime.local(
+    parseInt(dateArray[0]),
+    parseInt(dateArray[1]),
+    parseInt(dateArray[2])
+  );
+
+  const cleanDate = `${thisDate.monthShort} ${thisDate.c.day}`;
+  cardHeader.innerHTML = cleanDate;
   cardContainer.appendChild(cardHeader);
 
   userEvents.forEach((userEvent) => {
