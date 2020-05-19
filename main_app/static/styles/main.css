@@ -135,6 +135,7 @@ body {
   height: 6vw;
   background-color: rgba(240, 240, 240, 0.5);
   color: #1a1a1a;
+  padding: 2px 5px;
 }
 
 .default-card-prompt {
@@ -181,7 +182,7 @@ body {
 }
 
 .new-event-card-button {
-  align-self: center;
+  text-align: center;
   padding: 4px;
   color: whitesmoke;
   text-decoration: none;
@@ -269,6 +270,7 @@ body {
 }
 
 .date-input {
+  border: none;
   border-radius: 5px;
   background-color: #54bce8;
   color: whitesmoke;
@@ -276,6 +278,7 @@ body {
 }
 
 .date-input:focus {
+  border: none;
   box-shadow: 0 0 0 1px solid #3f8dae;
 }
 
@@ -322,13 +325,15 @@ body {
   .main-countdown {
     width: 225px;
   }
-  .hamburger-nav {
-    margin: 30px 20px 0 0;
+  .card-header, .event-title, .event-where {
+    font-size: 20px;
+    margin-top: 2px;
+    padding: 4px 8px;
   }
-  .hamburger {
-    height: 35px;
-    margin-top: 14px;
+  .card {
+    height: 16vw;
   }
+
 }
 
 /* FOR SCREENS 768 PIXELS AND WIDER */
