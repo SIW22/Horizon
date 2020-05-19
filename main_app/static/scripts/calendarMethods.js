@@ -122,7 +122,7 @@ function renderEventCard(userEvent, cardContainer) {
   card.setAttribute("target-event-id", `${userEvent.id}`);
 
   const timer = document.createElement("div");
-  timer.classList.add("countdown");
+  timer.classList.add("countdown", "event-countdown");
   timer.setAttribute(
     "data_targetdate",
     userEvent.getAttribute("data-startdate")
@@ -187,6 +187,12 @@ function selectCalendarDate(id) {
 
   const cardContainer = document.querySelector(".cards");
   cardContainer.innerHTML = "";
+
+  const cardHeader = document.createElement("div");
+  cardHeader.classList.add("card-header");
+  cardHeader.innerHTML = id;
+  cardContainer.appendChild(cardHeader);
+
   userEvents.forEach((userEvent) => {
     renderEventCard(userEvent, cardContainer);
   });

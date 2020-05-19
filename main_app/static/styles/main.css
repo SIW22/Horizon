@@ -97,20 +97,6 @@ body {
   text-decoration: none;
 }
 
-/* .responsive .nav-buttons {
-  display: flex;
-} */
-
-
-
-
-
-
-.event-countdown {
-  width: 45vw;
-  max-width: 150px;
-}
-
 .result {
   margin-top: 5px;
   font-size: 35px;
@@ -129,7 +115,7 @@ body {
 
 .cards {
   margin: 5vw;
-  height: 35.25vw;
+  height: 55.25vw;
   width: 91vw;
   transition: 0.3s linear;
   overflow: auto;
@@ -139,18 +125,26 @@ body {
 }
 
 .card {
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background-color: #7fcdee;
   box-shadow: 0 0 0 1px #3f8dae;
   transform: translateY();
 }
 
 .card-header {
-  height: 6.375vw;
+  height: 6vw;
+  width: 100vw;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.event-countdown {
+  width: 45vw;
+  max-width: 150px;
+  color: whitesmoke;
 }
 
 .card-content {
-  padding: 15px;
+  /* padding: 15px; */
 }
 
 .primary-card {
