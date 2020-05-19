@@ -111,6 +111,52 @@ body {
   align-items: center;
 }
 
+.signup-login-form {
+  background: #7FCDEE;
+  color: whitesmoke;
+  width: 91vw;
+  height: auto;
+  /* display: flex;
+  flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.misc-text {
+  /* flex-direction: column; */
+  text-align: center;
+  position: relative;
+}
+
+.sign-up-now-text {
+  color: whitesmoke;
+}
+
+.btn {
+  background: whitesmoke;
+  font-family: futura;
+}
+
+/* validations on sign up form */
+li, .helptext {
+  display: block;
+  font-size: 10px;
+}
+
+#id_username, #id_password, #id_password1, #id_password2{
+  width: 80vw;
+  /* margin-left: 10vw; */
+  margin: 0 auto;
+}
+
+label {
+  font-size: 20px;
+  margin: 0 auto;
+}
+
 /* CARDS */
 
 .cards {
