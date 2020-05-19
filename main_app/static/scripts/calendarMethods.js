@@ -174,9 +174,10 @@ function renderEventCard(userEvent, cardContainer) {
   deleteButton.classList.add("delete-event", "event-button");
   deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
 
-  const deleteImg = document.createElement("i");
-  deleteImg.classList.add("fas", "fa-trash-alt");
-  deleteButton.appendChild(deleteImg);
+  // const deleteImg = document.createElement("i");
+  // deleteImg.classList.add("fas", "fa-trash-alt");
+  deleteButton.innerHTML = "Delete";
+  // deleteButton.appendChild(deleteImg);
   eventActions.appendChild(deleteButton);
 
   card.append(eventActions);
@@ -226,6 +227,7 @@ function selectCalendarDate(id) {
 }
 
 function deleteEvent(button) {
+  console.log("Delete event pressed");
   let csrftoken = getCookie("csrftoken");
   fetch(`/events/${button.getAttribute("data-eventid")}/remove_event`, {
     method: "DELETE",
@@ -234,13 +236,12 @@ function deleteEvent(button) {
     .then((response) => {
       if (response.status == 200) {
         //Removes event from calendar
+        const parentElement = button.parentElement.parentElement;
         const calendarEvent = document.querySelector(
-          `#${button.parentElement.getAttribute("target-event-id")}`
+          `#${parentElement.getAttribute("target-event-id")}`
         );
         calendarEvent.remove();
-        //Removes parent event after removing all children
-        const parentElement = button.parentElement;
-        button.parentElement.innerHTML = "";
+        parentElement.innerHTML = "";
         parentElement.remove();
 
         queryForMainCountdown();

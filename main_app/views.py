@@ -23,6 +23,10 @@ def home(request):
 # EVENT VIEWS
 
 
+def about(request):
+    return render(request, 'about.html')
+
+
 @login_required
 def events_index(request):
     profile = Profile.objects.get(user=request.user)
