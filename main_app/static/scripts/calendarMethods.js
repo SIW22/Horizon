@@ -152,37 +152,21 @@ function renderEventCard(userEvent, cardContainer) {
     "href",
     `/events/${userEvent.getAttribute("data-pk")}/edit`
   );
+  
+  const editImg = document.createElement("img");
+  editImg.setAttribute("src", "ath/to/source");
+  editLink.appendChild(editImg);
 
-  //Pull this style into main.css
-  editLink.style.display = "inline-block";
-  editLink.style.backgroundColor = "#29ABE2";
-  editLink.style.color = "#ffffff";
-  editLink.style.textDecoration = "none";
-  editLink.style.paddingLeft = "10px";
-  editLink.style.paddingRight = "10px";
-  editLink.style.borderRadius = "10px";
-
-  editLink.innerHTML = "Edit";
-  card.appendChild(editLink);
 
   //Delete
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete-event", "event-button");
   deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
 
-  //Pull Style into main.css
-  deleteButton.style.display = "inline-block";
-  deleteButton.style.backgroundColor = "#A07278";
-  deleteButton.style.color = "#ffffff";
-  deleteButton.style.fontSize = "100%";
-  deleteButton.style.fontFamily = "inherit";
-  deleteButton.style.textDecoration = "none";
-  deleteButton.style.padding = "none";
-  deleteButton.style.border = "none";
-  deleteButton.style.paddingLeft = "10px";
-  deleteButton.style.paddingRight = "10px";
-  deleteButton.style.borderRadius = "10px";
-  deleteButton.style.cursor = "pointer";
+  const deleteImg = document.createElement("img");
+  deleteImg.setAttribute("src", "ath/to/source");
+  editLink.appendChild(deleteImg);
+
 
   deleteButton.innerHTML = "X";
   card.appendChild(deleteButton);
