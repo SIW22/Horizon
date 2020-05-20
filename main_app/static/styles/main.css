@@ -166,6 +166,7 @@ input {
   text-decoration: none;
   font-size: 11px;
 }
+
 /* validations on sign up form */
 li,
 .helptext {
@@ -234,7 +235,6 @@ label {
 .event-countdown .result {
   font-size: 22px;
   padding: 4px;
-  /* width: auto; */
 }
 
 .card-content {
@@ -383,18 +383,23 @@ label {
   cursor: pointer;
 }
 
+.calendar {
+  margin-bottom: 30px;
+}
+
 /* FOOTER */
-/* 
+
+
 footer {
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   height: 15px;
   text-align: center;
   background-color: #7fcdee;
   color: whitesmoke;
   font-size: 10px;
-  align-self: flex-end;
 }
 
 .about {
@@ -403,7 +408,7 @@ footer {
 
 .about:visited {
   color: #3f8dae;
-} */
+}
 
 /* FOR SCREENS 600 PIXELS AND WIDER */
 
