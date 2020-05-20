@@ -156,6 +156,17 @@ function renderEventCard(userEvent, cardContainer) {
 
   const eventActions = document.createElement("div");
   eventActions.classList.add("event-actions");
+
+  //Delete
+  const deleteButton = document.createElement("img");
+  deleteButton.classList.add("delete-event", "event-button");
+  deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
+  deleteButton.setAttribute("src", "/static/images/delete-button.png");
+  deleteButton.style.height = "25px";
+  deleteButton.style.width = "25px";
+  deleteButton.style.opacity = "70%";
+  eventActions.appendChild(deleteButton);
+
   //Edit
   const editLink = document.createElement("a");
   editLink.classList.add("edit-event", "event-button");
@@ -164,21 +175,12 @@ function renderEventCard(userEvent, cardContainer) {
     `/events/${userEvent.getAttribute("data-pk")}/edit`
   );
 
-  const editImg = document.createElement("i");
-  editImg.classList.add("fas", "fa-pencil-alt");
+  const editImg = document.createElement("img");
+  editImg.setAttribute("src", "/static/images/edit-button.png");
+  editImg.style.height = "25px";
+  editImg.style.width = "25px";
   editLink.appendChild(editImg);
   eventActions.appendChild(editLink);
-
-  //Delete
-  const deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete-event", "event-button");
-  deleteButton.setAttribute("data-eventId", userEvent.getAttribute("data-pk"));
-
-  // const deleteImg = document.createElement("i");
-  // deleteImg.classList.add("fas", "fa-trash-alt");
-  deleteButton.innerHTML = "Delete";
-  // deleteButton.appendChild(deleteImg);
-  eventActions.appendChild(deleteButton);
 
   card.append(eventActions);
 
@@ -227,7 +229,6 @@ function selectCalendarDate(id) {
 }
 
 function deleteEvent(button) {
-  console.log("Delete event pressed");
   let csrftoken = getCookie("csrftoken");
   fetch(`/events/${button.getAttribute("data-eventid")}/remove_event`, {
     method: "DELETE",
