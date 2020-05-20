@@ -242,6 +242,10 @@ label {
   color: #1a1a1a;
 }
 
+.delete-event {
+  object-fit: cover;
+}
+
 .event-button {
   padding: 5px;
   margin-right: 10px;
