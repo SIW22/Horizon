@@ -103,32 +103,38 @@ body {
 }
 
 .signup-login-form {
-  background: #7FCDEE;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #7FCDEE;
   color: whitesmoke;
   width: 91vw;
   height: auto;
-  /* display: flex;
-  flex-direction: row; */
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
+  margin-top: 15px;
   border-radius: 10px;
   padding: 5px;
 }
 
 .misc-text {
-  /* flex-direction: column; */
   text-align: center;
-  position: relative;
 }
 
 .sign-up-now-text {
-  color: whitesmoke;
+  color: #3f8dae;
+  text-decoration: none;
 }
 
 .btn {
-  background: whitesmoke;
+  background-color: #29abe2;
+  color: whitesmoke;
   font-family: futura;
+  border: none;
+  padding: 4px 6px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #3f8dae;
+  align-self: center;
 }
 
 /* validations on sign up form */
@@ -139,13 +145,13 @@ li, .helptext {
 
 #id_username, #id_password, #id_password1, #id_password2{
   width: 80vw;
-  /* margin-left: 10vw; */
-  margin: 0 auto;
+  margin-top: 0 auto;
 }
 
 label {
-  font-size: 20px;
+  font-size: 12px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* CARDS */
