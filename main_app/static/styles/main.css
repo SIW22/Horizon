@@ -1,0 +1,543 @@
+/* UNIVERSAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  font-family: futura;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  /* height: 100vh; */
+}
+
+/* HEADER */
+
+.nav-banner {
+  width: 100vw;
+  height: 39px;
+  background-color: #7fcdee;
+  z-index: 0;
+}
+
+.logo-glow {
+  float: left;
+  position: absolute;
+  margin-top: 17px;
+  margin-left: 5px;
+  z-index: 10;
+  width: 120px;
+}
+
+.logo-type {
+  float: left;
+  position: absolute;
+  margin-top: 16.5px;
+  margin-left: 15px;
+  z-index: 10;
+  width: 100px;
+}
+
+.nav-banner-overlay {
+  height: 13px;
+  width: 100vw;
+  background-color: #54bce8;
+  position: relative;
+  z-index: 30;
+}
+
+.timer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-countdown {
+  width: 90vw;
+  max-width: 375px;
+  background-color: #29abe2;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+  align-self: center;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #3f8dae;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+}
+
+.nav-buttons {
+  float: right;
+  display: flex;
+  align-items: right;
+  margin: -16px 4px;
+  z-index: 50;
+}
+
+.nav-link {
+  margin-right: 15px;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.result {
+  margin-top: 5px;
+  font-size: 35px;
+}
+
+/* SITE FIELD */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-login-form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #7fcdee;
+  color: whitesmoke;
+  width: 91vw;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.misc-text {
+  text-align: center;
+}
+
+.sign-up-now-text {
+  color: #3f8dae;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #29abe2;
+  color: whitesmoke;
+  font-family: futura;
+  border: none;
+  padding: 4px 6px;
+  margin: 10px 10px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid #3f8dae;
+  align-self: center;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-login-form {
+  max-width: 400px;
+}
+form {
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  display: block;
+}
+input {
+  max-width: 100%;
+}
+
+.new-event-actions {
+  display: flex;
+}
+
+.cancel-new-button {
+  text-decoration: none;
+  font-size: 11px;
+}
+/* validations on sign up form */
+li,
+.helptext {
+  display: block;
+  font-size: 9px;
+  text-align: center;
+}
+
+#id_username,
+#id_password,
+#id_password1,
+#id_password2 {
+  width: 80vw;
+  margin-top: 0 auto;
+}
+
+label {
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* CARDS */
+
+.cards {
+  margin: 5vw;
+  height: 55.25vw;
+  width: 91vw;
+  transition: 0.3s linear;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: #7fcdee;
+  box-shadow: 0 0 0 1px #3f8dae;
+}
+
+.card {
+  background-color: #7fcdee;
+  box-shadow: 0 0 0 1px #3f8dae;
+  transform: translateY();
+  margin-top: 0px;
+}
+
+.card-header {
+  height: 6vw;
+  background-color: rgba(240, 240, 240, 0.5);
+  color: #1a1a1a;
+  padding: 2px 5px;
+}
+
+.default-card-prompt {
+  color: whitesmoke;
+  text-align: center;
+  align-self: center;
+  font-size: 13px;
+}
+
+.event-countdown {
+  width: auto;
+  color: whitesmoke;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #29abe2;
+  float: right;
+}
+
+.event-countdown .result {
+  font-size: 22px;
+  padding: 4px;
+  /* width: auto; */
+}
+
+.card-content {
+  padding: 6px;
+  line-height: 18px;
+  color: #1a1a1a;
+}
+
+.delete-event {
+  object-fit: cover;
+}
+
+.event-button {
+  padding: 5px;
+  margin-right: 10px;
+  float: right;
+  color: rgba(240, 240, 240, 0.75);
+}
+
+.event-button:visited {
+  color: rgba(240, 240, 240, 0.5);
+}
+
+.primary-card {
+  height: 50%;
+  width: 100%;
+}
+
+.new-event-card-button {
+  text-align: center;
+  padding: 4px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+/* CALENDAR */
+
+.calendar-event-content {
+  font-size: 8px;
+  align-self: flex-end;
+  align-self: center;
+}
+
+#date-thing {
+  text-align: center;
+}
+
+.calendar,
+.week-banner {
+  width: 91vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.day-block,
+.day-marker {
+  width: 13vw;
+  height: 12vw;
+  color: #1a1a1a;
+  padding: 0;
+  background-color: #7fcdee;
+  box-shadow: 0 0 0 1px #3f8dae;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-marker {
+  height: 30px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.day-tag {
+  margin-left: 5px;
+  color: #1a1a1a;
+  font-size: 10pt;
+}
+
+.day-square {
+  color: #1a1a1a;
+  font-size: 7pt;
+  max-height: 1.5em;
+  min-width: 9px;
+  padding: 0px 5px;
+  background-color: rgba(240, 240, 240, 0.5);
+  justify-content: left;
+}
+
+.we {
+  background-color: #54bce8;
+}
+
+.sun {
+  border-radius: 10px 0 0 0;
+}
+
+.sat {
+  border-radius: 0 10px 0 0;
+}
+
+.calendar-nav-bar {
+  height: 30px;
+  width: 91vw;
+  background-color: #7fcdee;
+  box-shadow: 0 0 0 1px #3f8dae;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-input {
+  border: none;
+  border-radius: 5px;
+  background-color: #54bce8;
+  color: whitesmoke;
+  box-shadow: 0 0 0 1px inset #3f8dae;
+}
+
+.date-input:focus {
+  border: none;
+  box-shadow: 0 0 0 1px solid #3f8dae;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 0 10px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.up-one-week {
+  border-bottom: 10px solid whitesmoke;
+}
+
+.down-one-week {
+  border-top: 10px solid whitesmoke;
+}
+
+.event-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* FOOTER */
+/* 
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 15px;
+  text-align: center;
+  background-color: #7fcdee;
+  color: whitesmoke;
+  font-size: 10px;
+  align-self: flex-end;
+}
+
+.about {
+  text-decoration: none;
+}
+
+.about:visited {
+  color: #3f8dae;
+} */
+
+/* FOR SCREENS 600 PIXELS AND WIDER */
+
+@media only screen and (min-width: 600px) {
+  .nav-banner {
+    width: 100vw;
+    height: 75px;
+  }
+  .logo-glow {
+    width: 200px;
+    margin: 41.5px 8px;
+  }
+  .logo-type {
+    width: 150px;
+    margin: 41.5px 30px;
+  }
+  .nav-banner-overlay {
+    height: 25px;
+    width: 100vw;
+  }
+  .main-countdown {
+    width: 225px;
+  }
+  .card-header,
+  .event-title,
+  .event-where {
+    font-size: 20px;
+    margin-top: 2px;
+    padding: 4px 0 0 8px;
+  }
+  .card {
+    height: 16vw;
+  }
+  #logout {
+    margin-right: 25px;
+  }
+}
+
+/* FOR SCREENS 768 PIXELS AND WIDER */
+
+@media only screen and (min-width: 768px) {
+  .main-countdown {
+    transform: translateY(-113%);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .logo-glow {
+    width: 250px;
+    margin-top: 29.5px;
+  }
+  .logo-type {
+    width: 200px;
+    margin-top: 29.5px;
+  }
+  .cards {
+    transform: translateY(-32%);
+    height: 40vw;
+  }
+  .calendar-event-content {
+    font-size: 15px;
+  }
+  .card-header,
+  .event-title,
+  .event-where {
+    font-size: 22px;
+    line-height: 1.5em;
+  }
+  .card-header {
+    margin-top: 0;
+  }
+  .calendar {
+    transform: translateY(-18%);
+  }
+  .new-event-card-button {
+    font-size: 20px;
+  }
+}
+
+/* FOR SCREENS 992 PIXELS AND WIDER */
+
+@media only screen and (min-width: 992px) {
+  .field {
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    align-items: center;
+  }
+  .main-countdown {
+    transform: translateY(-113%);
+  }
+  .calendar {
+    width: 45.5vw;
+    margin-bottom: 1.5vw;
+    top: 50%;
+    transform: translateY(-13%);
+  }
+  .card-header {
+    height: 1.5em;
+    margin-top: 0;
+  }
+  .cards {
+    width: 45.5vw;
+    height: 37.75vw;
+    margin: 3vw;
+    top: 50%;
+    transform: translateY(-13%);
+  }
+  .card {
+    height: 10.5vw;
+  }
+  .day-block,
+  .day-marker {
+    width: 6.5vw;
+    height: 6.375vw;
+  }
+  .day-marker {
+    height: 30px;
+    margin-top: 17px;
+  }
+  .nav-buttons {
+    display: flex;
+  }
+  .date-input {
+    font-size: 10px;
+  }
+}
+
+/* FOR SCREENS 1200 PIXELS AND WIDER */
+
+@media only screen and (min-width: 1200px) {
+  .cards {
+    height: 36vw;
+    margin: 3vw;
+    top: 50%;
+    transform: translateY(-14%);
+  }
+}

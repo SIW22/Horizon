@@ -1,0 +1,24 @@
+{% extends 'base.html'%} {% block content%}
+<div class="signup-login-form">
+  <div class="misc-text">
+    <h3 class="login-here-text">Login Here!</h3>
+
+    <p class="new-to-horizon-text">
+      New to Horizon?
+      <a class="sign-up-now-text" href="{% url 'signup' %}">Sign up now!</a>
+    </p>
+  </div>
+
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" class="btn" value="Login" />
+    <input type="hidden" name="next" value="{{next}}" />
+  </form>
+</div>
+
+<style>
+  .timer-container {
+    display: none;
+  }
+</style>
+{% endblock %}
