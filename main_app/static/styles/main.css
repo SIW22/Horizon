@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 body {
@@ -107,7 +108,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: #7FCDEE;
+  background-color: #7fcdee;
   color: whitesmoke;
   width: 91vw;
   height: auto;
@@ -131,19 +132,51 @@ body {
   font-family: futura;
   border: none;
   padding: 4px 6px;
-  margin: 10px;
+  margin: 10px 10px 10px 10px;
   border-radius: 5px;
   border: 1px solid #3f8dae;
   align-self: center;
 }
-
-/* validations on sign up form */
-li, .helptext {
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-login-form {
+  max-width: 400px;
+}
+form {
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+label {
   display: block;
-  font-size: 10px;
+}
+input {
+  max-width: 100%;
 }
 
-#id_username, #id_password, #id_password1, #id_password2{
+.new-event-actions {
+  display: flex;
+}
+
+.cancel-new-button {
+  text-decoration: none;
+  font-size: 11px;
+}
+/* validations on sign up form */
+li,
+.helptext {
+  display: block;
+  font-size: 9px;
+  text-align: center;
+}
+
+#id_username,
+#id_password,
+#id_password1,
+#id_password2 {
   width: 80vw;
   margin-top: 0 auto;
 }
@@ -232,9 +265,7 @@ label {
   text-decoration: none;
 }
 
-
 /* CALENDAR */
-
 
 .calendar-event-content {
   font-size: 8px;
@@ -369,7 +400,9 @@ label {
   .main-countdown {
     width: 225px;
   }
-  .card-header, .event-title, .event-where {
+  .card-header,
+  .event-title,
+  .event-where {
     font-size: 20px;
     margin-top: 2px;
     padding: 4px 0 0 8px;
@@ -406,7 +439,9 @@ label {
   .calendar-event-content {
     font-size: 15px;
   }
-  .card-header, .event-title, .event-where {
+  .card-header,
+  .event-title,
+  .event-where {
     font-size: 22px;
     line-height: 1.5em;
   }
