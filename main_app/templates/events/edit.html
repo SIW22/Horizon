@@ -1,12 +1,21 @@
 {% extends 'base.html'%} {% block content%}
-<div class="login-form">
-
-<section class="form-section">
-  <h1>EDIT {{event.title}}</h1>
-  <form method="POST" class="artist-form">
-    {% csrf_token %} {{form.as_p}}
-    <button class="btn" type="submit">Save</button>
-  </form>
-</section>
+<div class="signup-login-form">
+  <section class="form-section">
+    <h3>Edit {{event.title}}</h3>
+    <form method="POST" class="artist-form">
+      {% csrf_token %} {{form.as_p}}
+      <div class="new-event-actions">
+        <a class="btn cancel-new-button" href="{% url 'index' %}">Cancel</a>
+        <button class="btn" type="submit">Save</button>
+      </div>
+    </form>
+  </section>
 </div>
+
+<style>
+  .form-section h3 {
+    text-align: center;
+    font-weight: normal;
+  }
+</style>
 {% endblock %}

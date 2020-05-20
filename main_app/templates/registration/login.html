@@ -1,11 +1,12 @@
 {% extends 'base.html'%} {% block content%}
 <div class="signup-login-form">
+  <div class="misc-text">
+    <h3 class="login-here-text">Login Here!</h3>
 
-  <div class="misc-text">  
-    <h3 class="login-here-text">Login here!</h3>
-
-    <p class="new-to-horizon-text">New to Horizon? 
-    <a class="sign-up-now-text" href="{% url 'signup' %}">Sign up now!</a></p>
+    <p class="new-to-horizon-text">
+      New to Horizon?
+      <a class="sign-up-now-text" href="{% url 'signup' %}">Sign up now!</a>
+    </p>
   </div>
 
   <form action="{% url 'login' %}" method="post">
@@ -14,4 +15,10 @@
     <input type="hidden" name="next" value="{{next}}" />
   </form>
 </div>
+
+<style>
+  .timer-container {
+    display: none;
+  }
+</style>
 {% endblock %}
