@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
+  /* height: 100vh; */
 }
 
 /* HEADER */
@@ -382,6 +383,28 @@ label {
   cursor: pointer;
 }
 
+/* FOOTER */
+/* 
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 15px;
+  text-align: center;
+  background-color: #7fcdee;
+  color: whitesmoke;
+  font-size: 10px;
+  align-self: flex-end;
+}
+
+.about {
+  text-decoration: none;
+}
+
+.about:visited {
+  color: #3f8dae;
+} */
+
 /* FOR SCREENS 600 PIXELS AND WIDER */
 
 @media only screen and (min-width: 600px) {
@@ -465,7 +488,7 @@ label {
 @media only screen and (min-width: 992px) {
   .field {
     flex-direction: row;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     align-items: center;
   }
   .main-countdown {
